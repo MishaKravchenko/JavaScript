@@ -17,11 +17,11 @@ rules.textContent = ("Subreddit to help you find streams for every NBA game in o
 
 // e) змініть кожному елементу колір фону на червоний
 // f) змініть кожному елементу колір тексту на синій
-content.style.backgroundColor = ("red");
-content.style.color = ("blue");
+content.style.backgroundColor = ("orange");
+content.style.color = ("grey");
 
-rules.style.backgroundColor = ("red");
-rules.style.color = ("blue");
+rules.style.backgroundColor = ("grey");
+rules.style.color = ("orange");
 
 // g) отримати весь список класів елемента з id=rules і вивести їх в console.log
 let rulesClass = document.getElementsByClassName('fc bp')
@@ -35,7 +35,7 @@ console.log(fc_rules)
 // i) поміняти колір тексту у всіх елементів fc_rules на червоний
 for (let i = 0; i < fc_rules.length; i++) {
     fc_rules[i].style.color = ("red");
-    fc_rules[i].style.backgroundColor = ("blue");
+    fc_rules[i].style.backgroundColor = ("yellow");
 }
 
 ////________________________________________________________________________________________________
@@ -108,15 +108,62 @@ for (let i = 0; i < users.length; i++) {
 
 // 3) Блок з адресою зробити окремим блоком, з блоками для кожної властивості
 
-for (let i = 0; i < users.length; i++) {
-    let userDivAdress = document.createElement("div");
+// 1 спроба
 
-    userDivAdress.textContent = (`
-    ${users[i].address.city},
-    ${users[i].address.country},
-    ${users[i].address.street},
-    ${users[i].address.houseNumber}`);
-
-    document.body.appendChild(userDivAdress);
-}
+// for (let i = 0; i < users.length; i++) {
 //
+//
+//     let userDivAddress = document.createElement("div");
+//
+//     document.body.appendChild(userDivAddress)
+//
+//     let city = document.createElement("div");
+//     let country = document.createElement("div");
+//     let street = document.createElement("div");
+//     let houseNumber = document.createElement("div");
+//
+//     city.textContent = (`Місто ${users[i].address.city}`);
+//     country.textContent = (`Країна ${users[i].address.country}`);
+//     street.textContent = (` Вулиця${users[i].address.street}`);
+//     houseNumber.textContent = (`Номер будинку ${users[i].address.houseNumber}`);
+//
+//     document.body.appendChild(city);
+//     document.body.appendChild(country);
+//     document.body.appendChild(street);
+//     document.body.appendChild(houseNumber);
+// }
+
+// 2 спроба (document.body.appendChild(city);)
+// БЕЗ ДОКУМЕНТА! просто батьківський тег чи змінна крапка аппенчайлд (дочірня).
+//(*&^%$#$%^&*((*&^%$#$%^&*()*&^%$#$%^&*()(*&^%$#$%^&*()(*&^%$%^&*)
+
+for (let i = 0; i < users.length; i++) {
+
+    let userDivAddress = document.createElement("div");
+
+    userDivAddress.style.backgroundColor = ("orange");
+    userDivAddress.style.marginBottom = ("10px");
+    userDivAddress.style.width = ("20%");
+    userDivAddress.style.padding = ("100px 0");
+    userDivAddress.style.textAlign = ("center");
+    userDivAddress.textContent = ("pariruri pariram");
+
+    document.body.appendChild(userDivAddress);
+
+    let city = document.createElement("div");
+    let country = document.createElement("div");
+    let street = document.createElement("div");
+    let houseNumber = document.createElement("div");
+
+    city.textContent = (`Місто ${users[i].address.city}`);
+    country.textContent = (`Країна ${users[i].address.country}`);
+    street.textContent = (` Вулиця${users[i].address.street}`);
+    houseNumber.textContent = (`Номер будинку ${users[i].address.houseNumber}`);
+
+    userDivAddress.appendChild(city);
+    userDivAddress.appendChild(country);
+    userDivAddress.appendChild(street);
+    userDivAddress.appendChild(houseNumber);
+
+}
+

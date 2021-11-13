@@ -26,7 +26,6 @@ for (let i =0;i<li.length;i++){
 let linkList = document.getElementsByClassName("linkList");
 for (let i=0;i<linkList.length;i++){
     linkList[i].style.width = ("50%");
-    linkList[i].style.backgroundColor = ("orange");
 }
 
 // d) отримує текст який зберігається в елементі з класом listElement2
@@ -138,20 +137,25 @@ let rules = [
     }
 ];
 
-for (let i=0;i<rules.length;i++){
-let divRules = document.createElement('div');
-divRules.textContent=(`${rules[i].title}${rules[i].body}`);
+let divRules = document.createElement("div");
+divRules.classList.add("content");
+
 document.body.appendChild(divRules);
-    console.log(divRules[i]);
-}
 
+for (let i = 0; i < rules.length; i++) {
+    let rule = document.createElement("div");
+    let title = document.createElement("div");
+    let body = document.createElement("div");
 
-let divElement = document.getElementsByTagName("div");
-for (let i=0;i<divElement.length;i++){
-    divElement[i].classList.add("rules");
+    title.textContent = (`${rules[i].title}`);
+    body.textContent = (`${rules[i].body}`);
+
+    rule.appendChild(title);
+    rule.appendChild(body);
+    divRules.appendChild(rule);
+
 }
-console.log(divElement);
- ///////////////////////////сложно
+console.log(divRules)
 
 
 // ===========================================================================
@@ -188,11 +192,16 @@ let citiesWithId = [
 //             }
 //         }
 //         // TO BE CONTINUED .....
+
+// usersWithId.slice() ------ копіює силки на обєкти в змінну usersWithCities при цьому оригінал і новий масив будуть
+// сслатись на один і той же об'єкт. Якщо об'єкт по ссилці буде змінений то він зміниться і в оригіналі.+
+// ми проходимся по юзерам, а потом і по містам і якщо, юзер.ід === сіті.юзер_айді, то присвоїти адрес сіті
+
 let usersWithCities = usersWithId.slice()
-for (let user of usersWithCities) {
-    for (let city of citiesWithId) {
-        if (user.id === city.user_id) {
-            user.address = city
+for (let userR of usersWithCities) {
+    for (let cityY of citiesWithId) {
+        if (userR.id === cityY.user_id) {
+            userR.address = cityY
         }
     }
 }

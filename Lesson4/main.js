@@ -255,19 +255,93 @@
 //     [2,3,4,5]
 // результат
 //     [3,5,7,9]
-//
+
+// let addIndex = function (arr1, arr2){
+//     let sum = [];
+//      for (let i = 0; i < arr1.length; i++){
+// sum[i] = arr1[i]+ arr2[i];
+//     }
+//     return sum;
+// }
+// let addIndex1 = addIndex([1,2,2,3,3,4,4,4,3,3,3],[1,2,2,3,3,4,4,4,3,3,3]);
+// console.log(addIndex1);
+
 //
 // ============================================================================================
 //
 // - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
+
+// let returnMinNumb = (arr) => {
+//     let min = arr[0];
+//     let max = arr[length];
+//     for (let itemMin of arr) {
+//         if (min>itemMin) min=itemMin;
+//     }
+//     for (let itemMax of arr) {
+//         if(max<itemMax) max=itemMax;
+//     }
+//     console.log(max);
+//     return min;
+//
+// }
+// let returnMinNumb1 = returnMinNumb([334,555,645,534,253,203,305,122,312,454,324,253,355,462,999,9]);
+// console.log(returnMinNumb1);
+
 // - Взяти задачі з завдання 10 та 9 та обєднати їх в одну динамічну функцію.
 //     Що б я міг сам вибрати повернути мені масив ключів чи масив значень.
+//___________________________________________________________________________
+// Можна адаптувати, але поки так. Звернути увагу на (answer.trim().toLocaleLowerCase() === "keys") класна штука.
+
+// function returnValue(array){
+//     let arr = [];
+//     let keysOrValues = [];
+//     let answer = prompt("Keys or Values?");
+//     if (answer.trim().toLocaleLowerCase() === "keys"){
+//     for (let item of array) {
+//         arr.push(Object.keys(item));
+//     }
+//     for (let arrItem of arr) {
+//         for (let arrItems of arrItem) {
+//             keysOrValues.push(arrItems);
+//         }
+//     }
+//
+//     } else if (answer.trim().toLocaleLowerCase()  === "values"){
+//         for (let item of array) {
+//             arr.push(Object.values(item));
+//         }
+//     for (let arrItem of arr) {
+//         for (let arrItems of arrItem) {
+//             keysOrValues.push(arrItems);
+//         }
+//     }
+//     }
+//     return keysOrValues
+// }
+//
+// let array = returnValue([{name: 'Dima', age: 13}, {model: 'Camry',age:4} , {power: 200, color:"black"}]) ;
+// console.log(array);
+
 // - Приймає масив та число "i", та міняє місцями об'єкт який знаходиться в індексі "i" на "i+1"
 //   EXAMPLE:
 //   foo([9,8,0,4], 0) // ==> [ 8, 9, 0, 4 ]
 //   foo([9,8,0,4], 1) // ==> [ 9 ,0, 8, 4 ]
 //   foo([9,8,0,4], 2) // ==> [ 9, 8, 4, 0 ]
 //
+// я незнаю як в мене це вийшло, але шось дуже сложно
+//  створює змінну омг і кажемо їй присвой нам таке то значення, з прийнятого індекса і введеного масива.
+// індекс збільшуємо на 1, і присвоюємо в омг.
+
+// function swap(arr, i) {
+//     debugger
+//     let omg = arr[i];
+//     arr[i] = arr[i + 1];
+//     arr[i + 1] = omg;
+//     return arr;
+// }
+//
+// console.log(swap([112, 232, 433, 443, 553, 653, 753, 853, 935, 1053, 1153, 1253, 1533], 10));
+
 // - Сворити функцію яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень.
 // Двожина масиву від 2 до 100
 // EXAMPLE:
@@ -275,6 +349,28 @@
 // [0,1,2,3,4] => [1,2,3,4,0]
 // [0,0,1,0]   => [1,0,0,0]
 //
+
+//  let add = trueArr.concat(falseArr); (повторити методи масивів)
+
+// let zeroLast = function (arr) {
+//     let falseArr = [];
+//     let trueArr = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] === 0)
+//             falseArr.push(arr[i])
+//         else
+//             trueArr.push(arr[i])
+//     }
+//         let add = trueArr.concat(falseArr);
+//     console.log(add);
+//     return add;
+//
+// }
+//
+// let zeroLast1 = zeroLast([112, 0, 0, 0, 553, 0, 753, 853, 0, 1053, 0, 1253, 1533]);
+// console.log(zeroLast1);
+
+
 // - Дано список імен.
 // let n1 = '    Harry       Potter      '
 // let n2 = '    Ron       Whisley      '
@@ -285,16 +381,102 @@
 // let n3 = 'Hermione Granger'
 //
 // ============================================================================================
-//
+
+// let notValid = function (n1, n2, n3){
+//     for (let argument of arguments) {
+//         let valid = argument.trim().replace(/\s+/g, ' ');
+//         console.log(valid);
+//     }
+// }
+// notValid('    Harry       Potter      ','    Ron       Whisley      ','    Hermione       Granger      ');
+
 //
 //
 // // ******************* НАЗАД В МИНУЛЕ *********************** //
 // Створити функцію яка :
 // - Додає в боді блок з текстом "Hello owu"
+
+// let addDiv = function (text){
+//    let divText = document.createElement("div");
+//         divText.classList.add("text");
+//         divText.style.backgroundColor =("grey");
+//         divText.style.maxWidth =("50%");
+//         divText.style.color =("orange");
+//         divText.textContent =(text);
+//
+//         document.body.appendChild(divText);
+// }
+// addDiv("Hello owu ");
+
 // - Додає в боді елемент з текстом . Тип елементу та текст отримати через аргументи
+
+// let addDiv = function (tag,text){
+//    let divText = document.createElement("div");
+//    let paragraph = document.createElement(tag);
+//         divText.style.backgroundColor =("grey");
+//         divText.style.maxWidth =("50%");
+//         divText.style.color =("orange");
+//         paragraph.textContent =(text);
+//
+//         document.body.appendChild(divText);
+//         divText.appendChild(paragraph);
+// }
+// addDiv("p","Hello owu ");
+
+
+
 // - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
-// Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали. Всі властивості авто в обному блоці
-// - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
-// Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
-// Для кожної властивості створити всередені блока автомоблія свій блок
+
+// let users = [{
+//     name: 'vasya',
+//     age: 31,
+//     status: false,
+// }, {
+//     name: 'petya',
+//     age: 30,
+//     status: true,
+// }, {
+//     name: 'kolya',
+//     age: 29,
+//     status: true,
+// }, {
+//     name: 'olya',
+//     age: 28,
+//     status: false,
+// }, {
+//     name: 'max',
+//     age: 30,
+//     status: true,
+// }, {
+//     name: 'anya',
+//     age: 31,
+//     status: false,
+// }, {
+//     name: 'oleg',
+//     age: 28,
+//     status: false,
+// }, {
+//     name: 'andrey',
+//     age: 29,
+//     status: true,
+// }];
+
+
+ // незнаю, мало би працювати... пише undefined
+// E R R O R
+
+// let enterArr = function (array){
+//     let divka = document.createElement("div");
+//     document.body.appendChild(divka);
+//     let ulka = document.createElement("ul");
+//     divka.appendChild(ulka);
+//     for (let i = 0; i < array.length; i++) {
+//        let lilka = users[i] = document.createElement("li");
+//        lilka.textContent = (`${[i+1]} - - ${users.name} - - ${users.age} - - ${users.status} `)
+//         ulka.appendChild(lilka);
+//     }
+// }
+// enterArr(users);
+
+// а так загалом з ДОМом все понятно, з функцієй треба ще попрацювати.
 // // ******************* НАЗАД В МИНУЛЕ *********************** //

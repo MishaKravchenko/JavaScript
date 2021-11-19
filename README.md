@@ -1,186 +1,57 @@
 # JavaScript
-______________________________________________________________
-log
-alert
-document.write
+0 пн
+intro
 
-let
-var
-разница
-const
+1 ср +
+log alert document.write let var разница const types number string boolean arr arr[i] obj obj.field obj[field] obj [] obj embeded obj typeof operators + - * / % () ++ -- ** cast to bool , to string, to number prompt  document.write
 
-types
-number
-string
-boolean
-arr arr[i]
-obj
-obj.field
-obj[field]
-obj []
-obj embeded obj
-typeof
+2 пт +
+if else switch confirm = || ternary Math.random MathFloor
 
-operators
-+
--
-*
-/
-%
-()
-++
---
-**
+3 пн +
+looops + arrays +if for forof while itin loop in loop
 
-cast
-to bool ,
-to string,
-to number
-prompt  document.write
-______________________________________________________________
-if else
-switch
-confirm
-= ||
-ternary
-Math.random MathFloor
-array.length
-______________________________________________________________
-looops
-+ arrays
-+if
-for
-forof
-while
-itin
+4 ср +
+functions return , void, arguments fn call in fn, hoist
 
-loop in loop
-______________________________________________________________
-functions
-return ,
-void,
-arguments
-fn call in fn,
-hoist
-______________________________________________________________
+5 пт +
 ref vs primitives внешние переменные, как их изменяет функция
+  function expression arrow selfinvoke
+ рекурсия callbacks (пример , функция - это робот, колбек - микрочип с программой)
 
-function expression
-arrow
-selfinvoke
+6 пн +
+array methods
+  String methods
 
-рекурсия
-callbacks
-(пример , функция - это робот, колбек - микрочип с программой)
-______________________________________________________________
-String methods
-    String.prototype.concat()
-    String.prototype.toLowerCase()
-    String.prototype.toUpperCase()
-    String.prototype.trim()
-    String.prototype.endsWith()
-    String.prototype.startsWith()
-    String.prototype.charAt()
-    String.prototype.charCodeAt()
-    String.prototype.includes()
-    String.prototype.indexOf()
-    String.prototype.lastIndexOf()
-    String.prototype.replace()
-    String.prototype.replaceAll()
-    String.prototype.slice()
-    String.prototype.split()
-    String.prototype.substring()
-    
-Array methods
-    Array.isArray()
-    Array.prototype.pop()
-    Array.prototype.push()
-    Array.prototype.shift()
-    Array.prototype.unshift()
-    Array.prototype.concat()
-    Array.prototype.includes()
-    Array.prototype.join()
-    Array.prototype.reverse()
-    Array.prototype.indexOf()
-    Array.prototype.slice()
-    Array.prototype.splice()
-    Array.prototype.forEach()
-    Array.prototype.filter()
-    Array.prototype.map()
-    Array.prototype.sort()
-    Array.prototype.find()
-    Array.prototype.every()
-    Array.prototype.some()
-    Array.prototype.flat()
-    Array.prototype.flatMap()
-    Array.prototype.reduce()
-_______________________________________________________
-objects,
-add fields ,
-dynamic fields,
-delete fields,
-func in objects,
-this (fullname : this.name + this.surname) closures get set
-constructors classes
+7 ср
+    objects, add fields , dynamic fields, delete fields, func in objects, this (fullname : this.name + this.surname) closures get set constructors classes
+ closeures!!
+    dz
 
-closeures!!
-_______________________________________________________
-DOM
-bytag,
-byclass,
-id,
-search in current element
-children,
-child,
-node / element
-querySelector
-formsAPI
-classlist
-_______________________________________________________
-DOM part2
-append / append child
-cloneNode
-classlist
-setAttribute
-next/previous sibling /  sibling element
-рекурсия в дом
-forms api
-a href
-_______________________________________________________
-DOM part3
-events
-clicck...event
-preventDefault
-object taget
-this reference
-forms+events
-filtering,sorting array
-_______________________________________________________
-BOM 
-localstorage + url + stream(??wtf?), 
-ls,history,url
-_______________________________________________________
+
+8 пт
+DOM bytag, byclass, id, search in current element children, child, node / element querySelector formsAPI classlist
+
+9 пн
+DOM part 2
+ append / append child style classlist setAttribute sibling /  sibling element forms рекурсия в дом
+
+10 ср
+DOM events
+  clicck...event preventDefault object taget this forms+events filtering,sorting
+
+11 пт
+BOM localstorage + url + stream(??wtf?), ls,history,url
+
+12 пн
 json
-fetch 
-get 
-post 
-methods users/:id/posts 
-работа с различными api
-_______________________________________________________
-firebase 
-firestore
-_______________________________________________________
-setTimeout 
-setInterval 
-Async 
-promises 
-eloop
-_______________________________________________________
-call 
-apply 
-bind 
-spred 
-es6 
-rest 
-proto 
-Date
+fetch get post methods users/:id/posts работа с различными api
+
+13 ср
+firebase firestore
+
+14 пт
+setTimeout setInterval Async promises eloop
+
+15 пн
+call apply bind spred es6 rest proto Date

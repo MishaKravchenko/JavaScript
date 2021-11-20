@@ -424,7 +424,6 @@
 // addDiv("p","Hello owu ");
 
 
-
 // - приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 
 // let users = [{
@@ -461,7 +460,7 @@
 //     status: true,
 // }];
 
- // незнаю, мало би працювати... пише undefined
+// незнаю, мало би працювати... пише undefined
 // E R R O R
 
 // let enterArr = function (array){
@@ -479,3 +478,101 @@
 
 // а так загалом з ДОМом все понятно, з функцієй треба ще попрацювати.
 // // ******************* НАЗАД В МИНУЛЕ *********************** //
+
+
+// // Н О В І    Т А С К И  // //
+// - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
+// let squareRectangle = function (a, b) {
+//     return a * b;
+// }
+// console.log(squareRectangle(4, 3));
+
+// - створити функцію яка обчислює та повертає площу кола з радіусом r
+// let squareCircle = function (radius) {
+//     return Math.round(Math.PI * Math.pow(radius,2));
+// }
+// console.log(squareCircle(14));
+
+// - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
+// let squareCylinder = function (height, radius) {
+//     let s1 = Math.PI * Math.pow(radius, 2);
+//     let s2 = 2 * Math.PI * radius * height;
+//     return Math.round((s1 * 2) + s2);
+// }
+// console.log(squareCylinder(10, 5));
+
+// - створити функцію яка приймає масив та виводить кожен його елемент
+//  let addArray = function (arr){
+//      for (let item of arr) {
+//          console.log(item);
+//      }
+// return arr;
+//  }
+// console.log(addArray([1,123,312,4,124,12,312,3,14,24,12,4,12,412]));
+
+// 2.попробую перебрати методом forEach.
+// let addArray = function (arr){
+//     arr.forEach(value =>{
+//         console.log(value);
+//     })
+//     return arr;
+// }
+// console.log(addArray([1,123,312,4,124,12,312,3,14,24,12,4,12,412]));
+
+// - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+// let paragraph = function (someText){
+//     document.write(`<p>${someText}</p>`);
+// }
+// paragraph("Lorem ipsum");
+
+// - спитатись, шось не виходить. 526 рядок
+// let paragraph = function (someText){
+//     let prg = document.createElement("p");
+//     document.body.appendChild("p");
+//     prg.textContent = (someText);
+// }
+// paragraph("Some text");
+
+// - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+// let createElement = function (someText){
+//     document.write("<ul>");
+//     for (let i = 0; i <3; i++) {
+//         document.write(`<li>${someText}</li>`)
+//     }
+//     document.write("</ul>");
+// }
+// createElement("Lorem Ipsum");
+
+// - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+// let createElement = function (someText, n){
+//     document.write('<ul>');
+//     for (let i = 0; i < n; i++) {
+//         document.write(`<li>${someText}</li>`)
+//
+//     }
+//     document.write('</ul>');
+// }
+// createElement("Lorem ipsum", 10);
+
+// - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+// let createList = function (array){
+//     document.write(`<ul>`)
+//     for (let item of array) {
+//         document.write(`<li>${item}</li>`)
+//     }
+//     document.write(`</ul>`)
+// }
+// createList([1,1,2,3,3,3,3,true,"asdasd","ASDAS",123,312,312,31,23,false]);
+
+//
+// - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+// let arrObj = function (array){
+//     for (let item of array) {
+//         document.write(`<div>${item.id}) - - ${item.name} - - ${item.age} o.y</div>`)
+//     }
+// }
+// arrObj([
+//     {id:1,name:"Sashko",age:23},{id:2,name:"Mishko",age:0},{id:3,name:"Stepan",age:33},
+//     {id:4,name:"Sashko",age:23},{id:5,name:"Mishko",age:0},{id:6,name:"Stepan",age:33},
+//     {id:7,name:"Sashko",age:23},{id:8,name:"Mishko",age:0},{id:9,name:"Stepan",age:33}
+// ]);

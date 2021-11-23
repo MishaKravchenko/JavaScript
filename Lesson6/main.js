@@ -390,52 +390,20 @@
 
 
 // indexOf – повертає нам номер індекса на якому є символ який ми вказали. Але воно вказаує тільки перший елемент. lastIndexOf - крокує з кінця масиву
-let returnMinMax = (arr, el) =>{
-
-    let min = arr.indexOf(el)
-    let max = arr.lastIndexOf(el)
-    console.log(`Answer: MinIndex = ${min}, MaxIndex = ${max}`)
-}
-returnMinMax([1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14], 7)
-
-// Створити обєкт автомобіля з полями:
-//     Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
-//     Власник автомобіля теж має бути обєкт, у якого є поля
-// Імя, вік, стаж водіння.
-//     Створити не менше 7 та не більше 20 машинок.
-//     Для початку вкладіть всі наші створені автомобілі в масив cars.
-//     Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
-// На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
-// Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
-// Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25,
-//     то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
-//     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+// let returnMinMax = (arr, el) =>{
 //
-//
+//     let min = arr.indexOf(el)
+//     let max = arr.lastIndexOf(el)
+//     console.log(`Answer: MinIndex = ${min}, MaxIndex = ${max}`)
+// }
+// returnMinMax([1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14], 7)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Н О В І  Т А С К И   (js_demos/js/preview/lesson6)
 //
 // - 1.створити функцію, яка генерує масив рандомних числових цілих значень в діапазоні від 0 до 100.
 // - 2.створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. Відсортувати його за допомоги sort
 // - 3.створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. відфільтрувати  його за допомоги filter, залишивши тільки парні числа
-// - 4.створити масив рандомних цілих числових значень (або згенерувати, за допомоги попередньої функції) . за допомоги map та колбеку перетворити всі об'єкти в масиві на стрінгові.
+// - 4.створити масив рандомних цілих числових значень (або згенерувати, за допомоги попередньої функції) . за допомоги map та колбеку перетворити всі об'єкти в масиві на стрінгові. (незнаю куди тут колбек вмістити, мабудь чогось не понімаю)
 //1----------------------------------------------------------
 // let randomNumb = (max, min, n) =>{
 //     let randomArr = [];
@@ -447,28 +415,53 @@ returnMinMax([1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14], 7)
 // }
 // console.log(randomNumb(100, 25, 50));
 //2.----------------------------------------------------------
-// let sort = randomNumb(10,1,50).sort((a, b) => {
-//     return a-b;
-// })
+// let sort = randomNumb(10,1,50).sort((a, b) => a-b);
 // console.log(sort);
 //3.----------------------------------------------------------
-// let filter = randomNumb(50,25,50).filter(value => {
-//    return  value %2 ===0;
-// })
+// let filter = randomNumb(50,25,50).filter(value => value %2 ===0);
 // console.log(filter);
 //4.----------------------------------------------------------
-// ще не вчили лекція буде в ПН - потом продовжу.
+// let randomNumb1 = randomNumb(50, 25, 50);
+// console.log(randomNumb1);
+//
+// let map = randomNumb1.map(value =>value.toString());
+// console.log(map);
 
 
-
-
-// - створити масив рандомних цілих числових значень (або згенерувати, за допомоги попередньої функції) . за допомоги map та колбеку перетворити всі об'єкти в масиві на стрінгові.
 // - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
 //     let nums = [11,21,3];
 // sortNums('ascending') // [3,11,21]
 // sortNums('descending') // [21,11,3]
+// Я НЕ ЗНАЮ(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
+// let sortNums = function (arr, direction) {
+//     arr.sort((a, b) => {
 //
+//         return direction;
+//     })
+//     return arr;
+// }
 //
+// let ascending = function (a,b) {
+//     return b-a;
+// }
+// let descending = function (a,b) {
+//     return a-b;
+// }
+//
+// let sortNums1 = sortNums([12, 3, 12, 12, 3, 123, 123, 123, 123, 56, 7, 56, 43, 346, 346], ascending);
+// console.log(sortNums1);
+//
+// function first (y){
+//     console.log(1);
+//     y()
+// }
+//
+// function second (){
+//     console.log(2);
+// }
+// first(second);
+
+
 // - є масив
 // let coursesAndDurationArray = [
 //     {title: 'JavaScript Complex', monthDuration: 5},
@@ -479,37 +472,135 @@ returnMinMax([1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14], 7)
 //     {title: 'Frontend', monthDuration: 4}
 // ];
 // -- відсортувати його за спаданням за monthDuration
+// let sort = coursesAndDurationArray.sort((a, b) => {
+//    return b.monthDuration - a.monthDuration;
+// })
+// console.log(sort);
+
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-//
+// let filter = coursesAndDurationArray.filter(value => {
+//    return  value.monthDuration>5;
+// })
+// console.log(filter);
+
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
-
+// let cutString = function (str, n){
+//    let re = /\B(?=(\d{3})+(?!\d))/g;
+//    str.toUpperCase().toString().replace(re," - ");
+//    return str;
+// }
+// console.log(cutString("кукурудза", 2));
 
 // - Знайти та вивести довижину настипних стрінгових значень
 // 'hello world', 'lorem ipsum', 'javascript is cool'
+// let lengthString = function (){
+//    for (let argument of arguments) {
+//       let length = argument.length;
+//       console.log(length);
+//    }
+// }
+// lengthString("hello world!", "lorem ipsum", "javascript is cool");
+
 // - Перевести до великого регістру наступні стрінгові значення
 // 'hello world', 'lorem ipsum', 'javascript is cool'
+// let uCase = function (){
+//    for (let argument of arguments) {
+//       let up = argument.toUpperCase();
+//       console.log(up);
+//    }
+// }
+// uCase("hello world", "lorem ipsum", "javascript is cool");
+
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
+// let lCase = function (){
+//    for (let argument of arguments) {
+//       let low = argument.toLowerCase();
+//       console.log(low);
+//    }
+// }
+// lCase("HELLO WORLD","LOREM IPSUM","JAVASCRIPT IS COOL");
+
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
-//
-//
+// let notValid = function (){
+//     for (let argument of arguments) {
+//         let valid = argument.toLowerCase().trim().replace(/\s+/g, ' ');
+//         console.log(valid);
+//     }
+// }
+// notValid( "     dirty string   ", "     ABRAKADABRA   ", "     ChUpApPi       MuNyAnIyO   ", "     ASasfklASF   ");
+
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 //     let str = 'Каждый охотник желает знать';
 // let arr = stringToarray(str);
 // document.writeln(arr); // ['Каждый', 'охотник', 'желает', 'знать']
-//
-//
+// let stringToArray = function (str){
+// return  str.split(" ");
+// }
+// console.log(stringToArray("Каждый охотник желает знать"));
+
 // - Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
 //     let str = 'Каждый охотник желает знать';
 // document.writeln(delete_characters(str, 7)); // Каждый
-//
+// let deleteCharacters = function (str, length){
+//   return  str.slice(0,length);
+// }
+// console.log(deleteCharacters("Каждый охотник желает знать", 9));
+
 // - Напишіть функцію insert_dash(str), яка приймає рядок str як аргумент і вставляє тире (-) між словами. При цьому всі символи рядка необхідно перевести у верхній регістр.
 //     let str = "HTML JavaScript PHP";
 // document.writeln(insert_dash(str)); // 'HTML-JAVASCRIPT-PHP'
-//
+// Якщо ми пишем " ", то replace міняє тільки перший побачений пробіл ,
+// Щоб замінити всі пробіли, треба визвати глобальний флаг (global match flag) =====> /( )/g
+// let insertDash = function (){
+//    for (let argument of arguments) {
+//      let string = argument.toUpperCase().replace(/( )/g," - ");
+//       console.log(string);
+//    }
+//    return arguments;
+// }
+// insertDash("HTML JavaScript PHP");
+
 // - Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр першого символу рядка з нижнього регістру у верхній.
-//
-//
-//
+// в першому прикладі доступились до букви charAt(0) і повернули все інше починаючи з другої букви substring'ом
+// в другому прикладі доступились до букви як до масиву значень, і повернули slic'ом
+//1.
+// let firstLetterCaps = function (string){
+//   return  string.charAt(0).toUpperCase() + string.substring(1);
+// }
+// console.log(firstLetterCaps("парампампам"));
+//2.
+// let firstLetterCaps = function (string){
+//    return string[0].toUpperCase() + string.slice(1);
+// }
+// console.log(firstLetterCaps("парампампам"));
+
+// str.firstLetterCaps
 // - Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
+// можна дізнатись індекси пробілів, збільшити цей індекс на один, і циклом виставити їм леттерКапс тільки ще першу букву.
+// або сплітом розділити і кожне слово буде під своїм індексом, тільки теж додати першу букву бо там немає пробіла.
+// upd: з циклами не вийшло, перетворити масив в стрінгу.// Метод join() объединяет все элементы массива в строку.(в дужках сіпаратор)
+// substr // substring // slice // - - В чому прикол?????
+// function capitalize(str) {
+//     return str
+//         .toLowerCase()
+//         .split(' ')
+//         .map(function (wordInArr) {
+//             return wordInArr[0].toUpperCase() + wordInArr.slice(1);
+//         })
+//         .join(' ');
+// }
+// console.log(capitalize("ShLa ShAsHa Po ShOsHe I ShOsHaLa ShUsHkU, tak ishe raz, shla sasha po shoshe i shosala shusku. ot halepa"))
+
+
+// function capitalize(str) {
+//     return str
+//         .toLowerCase()
+//         .split('')
+//         .map(function (wordInArr) {
+//             return wordInArr[0].toUpperCase() + wordInArr.slice(1);
+//         })
+//         .join(' ');
+// }
+// console.log(capitalize("ShLa ShAsHa Po ShOsHe I ShOsHaLa ShUsHkU, tak ishe raz, shla sasha po shoshe i shosala shusku. ot halepa"))

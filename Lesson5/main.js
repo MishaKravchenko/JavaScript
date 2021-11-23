@@ -390,3 +390,68 @@ function Prince(name, age, shoesSize) {
 
 let prince = new Prince("Romeo", 23, 45);
 prince.findGirl(girl);
+
+
+// ДОДАТКОВО
+// Створити обєкт автомобіля з полями:
+//     Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
+//     Власник автомобіля теж має бути обєкт, у якого є поля
+// Імя, вік, стаж водіння.
+//     Створити не менше 7 та не більше 20 машинок.
+//     Вкладіть всі наші створені автомобілі в масив cars.
+
+// class Car {
+//     constructor(model, power, driver, price, year, repairEngine) {
+//         this.model = model;
+//         this.power = power;
+//         this.driver = driver;
+//         this.price = price;
+//         this.year = year;
+//         this.repairEngine = repairEngine;
+//     }
+//
+//
+// }
+//
+// class Driver {
+//     constructor(name, surname, age, exp) {
+//         this.name = name;
+//         this.surname = surname;
+//         this.age = age;
+//         this.exp = exp;
+//     }
+// }
+//
+// let driver1 = new Driver("Vasya", "Pupkin", 28, 8);
+// let driver2 = new Driver("Misha", "Dupkin", 29, 9);
+// let driver3 = new Driver("Kolya", "Lupkin", 30, 8);
+// let driver4 = new Driver("Vika", "Pika", 31, 11);
+// let driver5 = new Driver("Oksana", "Poksana", 30, 10);
+// let driver6 = new Driver("Lyuba", "Plyuba", 29, 9);
+// let driver7 = new Driver("Lyuda", "Plyuda", 28, 8);
+// let driver8 = new Driver("Lyusia", "Plyusia", 27, 7);
+// let driver9 = new Driver("Larisa", "Parisa", 26, 6);
+// let driver10 = new Driver("Mahmud", "Pahmud", 27, 7);
+//
+// let car1 = new Car("Nissan", "300", driver1, 2300, 1970, true);
+// let car2 = new Car("Lastochka", "400", driver2, 3400, 1980, false);
+// let car3 = new Car("Skoda", "500", driver3, 4500, 1990, true);
+// let car4 = new Car("Ford", "600", driver4, 5600, 1900, false);
+// let car5 = new Car("Volkswagen", "200", driver5, 6700, 1910, true);
+// let car6 = new Car("Hyundai", "300", driver6, 7800, 1920, false);
+// let car7 = new Car("Kia", "400", driver7, 8900, 1930, true);
+// let car8 = new Car("Lada ", "500", driver8, 9000, 1940, false);
+// let car9 = new Car("Mazda", "600", driver9, 1100, 1950, true);
+// let car10 = new Car("Renault", "300", driver10, 2200, 1960, false);
+//
+// let arr = function () {
+//     let cars = [];
+//     cars.push(arguments);
+//     for (let car of cars) {
+//         if (car.repairEngine === true)
+//             car.power = (car.power * 10) / 100
+//         console.log(cars);
+//     }
+//     return cars;
+// }
+// console.log(arr(car1, car2, car3, car4, car5, car6, car7, car8, car9, car10,));

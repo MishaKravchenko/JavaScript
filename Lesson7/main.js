@@ -10,12 +10,12 @@
 //  text.style.display = ("none");
 // }
 //2.спосіб.(зникає і з'являється). все працює, але коли я пишу дісплей флекс блоку, то нічого не працює.. можливо там якийсь конфілкт між css i js`ом, ну js стоїть з самого низу. треба спитатись.
-let text = document.getElementById("text");
-let btn1 = document.getElementById("button1");
-
-btn1.onclick = () => {
-    text.hidden ? text.hidden = false : text.hidden = true
-}
+// let text = document.getElementById("text");
+// let btn1 = document.getElementById("button1");
+//
+// btn1.onclick = () => {
+//     text.hidden ? text.hidden = false : text.hidden = true
+// }
 
 <!--T A S K 2-->
 //     - Створіть кнопку, при кліку на яку, вона буде приховувати сама себе.
@@ -31,7 +31,7 @@ btn2.onclick = event => {
     console.log(event);
     console.log(event.target);
 }
-//3.спосіб. В цьому немає як такого сенсу, але ми можемо всередині нашої функції, звернутись до нашої кнопки через event.target.
+// 3.спосіб. В цьому немає як такого сенсу, але ми можемо всередині нашої функції, звернутись до нашої кнопки через event.target.
 // let btn = document.getElementById("button2");
 // btn.onclick = event => {
 //     event.target.hidden ? event.target.hidden = false : event.target.hidden = true;
@@ -75,36 +75,36 @@ a1.onclick = event => {
 // Вивести список коментарів в документ, кожний в своєму блоці.
 //     Додайте кожному коментарю по кнопці для згортання його body.
 
-let commentArray = [
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
-    {title: 'lorem', body: 'lorem ipsum dolo sit ameti'}
-]
-
-let content = document.getElementById("content");
-
-commentArray.forEach(item => {
-    const div = document.createElement("div");
-    const h2 = document.createElement("h2");
-    const p = document.createElement("p");
-    const button = document.createElement("button");
-    button.textContent = ("Hide");
-    h2.textContent = item.title;
-    p.textContent = item.body;
-    button.onclick = () => {
-        p.hidden ? p.hidden = false : p.hidden = true;
-    }
-    div.appendChild(h2);
-    div.appendChild(p);
-    div.appendChild(button);
-    content.appendChild(div);
-})
+// let commentArray = [
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'},
+//     {title: 'lorem', body: 'lorem ipsum dolo sit ameti'}
+// ]
+//
+// let content = document.getElementById("content");
+//
+// commentArray.forEach(item => {
+//     const div = document.createElement("div");
+//     const h2 = document.createElement("h2");
+//     const p = document.createElement("p");
+//     const button = document.createElement("button");
+//     button.textContent = ("Hide");
+//     h2.textContent = item.title;
+//     p.textContent = item.body;
+//     button.onclick = () => {
+//         p.hidden ? p.hidden = false : p.hidden = true;
+//     }
+//     div.appendChild(h2);
+//     div.appendChild(p);
+//     div.appendChild(button);
+//     content.appendChild(div);
+// })
 
 //<!--T A S K 6-->
 // - Створити 2 форми  по 2 інпути в кожній. створити кнопку при кліку на яку зчитується та виводиться на консоль інформація з цих 2х форм.
@@ -147,19 +147,73 @@ function createTable(rows, columns, tag) {
         }
         table.appendChild(tr)
     }
-tag.appendChild(table)
+    tag.appendChild(table)
 }
-createTable(10,10,content2);
 
-//<!--T A S K 7-->
+createTable(10, 10, content2);
+
+//<!--T A S K 8-->
 // - Напишіть «Карусель» – стрічку зображень, яку можна гортати вліво-вправо нажаттям на стрілочки.
+let objectArray = [
+    {
+        id: 1,
+        img_url: "1.jpg"
+    },
+    {
+        id: 2,
+        img_url: "2.jpg"
+    },
+    {
+        id: 3,
+        img_url: "3.jpg"
+    },
+    {
+        id: 4,
+        img_url: "4.jpg"
+    },
+    {
+        id: 5,
+        img_url: "5.jpg"
+    },
+    {
+        id: 6,
+        img_url: "6.jpg"
+    }
+]
+const content3 = document.getElementById("content3");
+const img = document.createElement("img");
+const btn4 = document.createElement("button");
+const btn5 = document.createElement("button");
 
+btn4.textContent = ("Left");
+btn5.textContent = ("Right");
+let index = 0;
+img.style.width = ("300px");
+img.style.height = ("300px");
+img.src = objectArray[index].img_url;
 
+content3.appendChild(img);
+content3.appendChild(btn4);
+content3.appendChild(btn5);
+btn4.onclick = () => {
+    index - 1 < 0
+        ? index = objectArray.length - 1
+        : index = index - 1;
+
+    img.src = objectArray[index].img_url;
+}
+btn5.onclick = () => {
+    index + 1 > objectArray.length - 1
+        ? index = 0
+        : index = index + 1;
+
+    img.src = objectArray[index].img_url;
+}
 //______________________________________________________________________________________________________________________________________________________
 // РОБОТА В АУДИТОРІЇ
 // ______________________________________________________________________________________________________________________________________________________
 //
-//
+//<!--T A S K 9-->
 // - Сворити масив нецензцрних слів.
 //     Сворити інпут текстового типу.
 //     Якщо людина вводить слово і воно міститься в масиві нецензурних слів кинути алерт з попередженням.
@@ -169,8 +223,51 @@ createTable(10,10,content2);
 //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
 //     Кинути алерт з попередженням у випадку якщо містить.
 //     Перевірку робити при натисканні на кнопку
+
+// Хули тут так мало?Это наша точка! Ты выёбывался — я те пизды дал, дал.. Ты на пенек сел — должен был косарь отдать.А тут хули так мало, урод, бля, ты? М, уёбок?!
+let dangerousGuy = ["хули","выёбывался","пизды", "бля", "уёбок"];
+
+let input6 = document.getElementById("input6");
+let button4 = document.getElementById("button4");
+
+button4.onclick =() =>{
+
+    for (const item of dangerousGuy) {
+       let s = input6.value.indexOf(`${item}`);
+        if (item === input6.value || s >=0 ){
+            alert("Сам такий");
+        }else {
+            alert("Здарова");
+        }
+    }
+}
+
+
+//<!--T A S K 10-->
 // -- Створити скрипт, котрий бере зчитує на сторінці (rules.html) текст і робить збоку меню-зміст по всіх заголовках які є в тексті.
 //     При кліку на пункт заголовку ви маєте відправлятись  до цього пункту в тексті
+
+let arrayH2 = document.getElementsByTagName("h2");
+let content4 = document.getElementById("content4");
+let wrap =  document.getElementById("wrap");
+let ul = document.createElement("ul");
+
+for (let i = 0; i < arrayH2.length; i++) {
+    let li = document.createElement("li");
+    let a = document.createElement("a");
+    let yakor = "yakor" +i;
+    a.href = "#"+yakor;
+    arrayH2[i].setAttribute("id", yakor);
+a.innerHTML = arrayH2[i].innerText;
+li.appendChild(a);
+ul.appendChild(li);
+}
+content4.appendChild(ul);
+content4.style.width = ("30%");
+wrap.style.width = ("70%");
+content4.style.float = ("left");
+wrap.style.float = ("left");
+
 // -- Взяти масив юзерів
 // const usersWithAddress = [
 //     {id: 9, name: 'vasya', age: 31, isMarried: false, address: {city: 'Kyiv', street: 'Gongadze', number: 16}},

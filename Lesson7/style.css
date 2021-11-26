@@ -1,0 +1,27 @@
+/*<!T A S K 1*/
+
+#button1,#text{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+#button1{
+    background-color: orange;
+}
+/*<!T A S K 4*/
+li{
+    list-style: none;
+}
+a{
+    text-decoration:none;
+    color: orange;
+}
+#a1{
+    color: red;
+}
+#subMenu{
+    display: none;
+}

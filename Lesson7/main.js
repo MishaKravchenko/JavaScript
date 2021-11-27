@@ -316,12 +316,12 @@ input9.type = "checkbox";
 content5.appendChild(userDiv);
 
 content5.appendChild(label1);
-content5.appendChild(label2);
-content5.appendChild(label3);
-
 content5.appendChild(input7);
+content5.appendChild(label2);
 content5.appendChild(input8);
+content5.appendChild(label3);
 content5.appendChild(input9);
+
 content5.appendChild(button5);
 
 button5.onclick = () =>{

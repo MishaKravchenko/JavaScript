@@ -225,18 +225,18 @@ btn5.onclick = () => {
 //     Перевірку робити при натисканні на кнопку
 
 // Хули тут так мало?Это наша точка! Ты выёбывался — я те пизды дал, дал.. Ты на пенек сел — должен был косарь отдать.А тут хули так мало, урод, бля, ты? М, уёбок?!
-let dangerousGuy = ["хули","выёбывался","пизды", "бля", "уёбок"];
+let dangerousGuy = ["хули", "выёбывался", "пизды", "бля", "уёбок"];
 
 let input6 = document.getElementById("input6");
 let button4 = document.getElementById("button4");
 
-button4.onclick =() =>{
+button4.onclick = () => {
 
     for (const item of dangerousGuy) {
-       let s = input6.value.indexOf(`${item}`);
-        if (item === input6.value || s >=0 ){
+        let s = input6.value.indexOf(`${item}`);
+        if (item === input6.value || s >= 0) {
             alert("Сам такий");
-        }else {
+        } else {
             alert("Здарова");
         }
     }
@@ -249,18 +249,18 @@ button4.onclick =() =>{
 
 let arrayH2 = document.getElementsByTagName("h2");
 let content4 = document.getElementById("content4");
-let wrap =  document.getElementById("wrap");
+let wrap = document.getElementById("wrap");
 let ul = document.createElement("ul");
 
 for (let i = 0; i < arrayH2.length; i++) {
     let li = document.createElement("li");
     let a = document.createElement("a");
-    let yakor = "yakor" +i;
-    a.href = "#"+yakor;
+    let yakor = "yakor" + i;
+    a.href = "#" + yakor;
     arrayH2[i].setAttribute("id", yakor);
-a.innerHTML = arrayH2[i].innerText;
-li.appendChild(a);
-ul.appendChild(li);
+    a.innerHTML = arrayH2[i].innerText;
+    li.appendChild(a);
+    ul.appendChild(li);
 }
 content4.appendChild(ul);
 content4.style.width = ("30%");
@@ -307,8 +307,9 @@ label1.innerText = "со статусом false";
 label2.innerText = "старше 29 лет";
 label3.innerText = "город Киев";
 
-button5.innerText = "Filter On";
+button5.innerText = "F I L T E R";
 
+// тип інпута "checkbox";
 input7.type = "checkbox";
 input8.type = "checkbox";
 input9.type = "checkbox";
@@ -324,23 +325,22 @@ content5.appendChild(input9);
 
 content5.appendChild(button5);
 
-button5.onclick = () =>{
+button5.onclick = () => {
+// спосіб ствоерення копії масиву, щоб не змінити первоначальний, хоча і фільтр не змінює . . .
     let myArray = JSON.parse(JSON.stringify(usersWithAddress))
-
+// якшо інпут вибраний checked - то . . .
     if (input7.checked) myArray = myArray.filter(value => !value.isMarried);
-    if (input8.checked) myArray = myArray.filter(value => value.age >=29);
+    if (input8.checked) myArray = myArray.filter(value => value.age >= 29);
     if (input9.checked) myArray = myArray.filter(value => value.address.city === "Kyiv");
 
-    userDiv.innerHTML = "";
+    userDiv.innerHTML = " ";
     userDiv.appendChild(renderContent(myArray))
 }
 
-function renderContent(array){
+function renderContent(array) {
     const main = document.createElement("div");
-    array.forEach(item =>{
-        const div =document.createElement("div");
-        const h3 = document.createElement("h3");
-
+    array.forEach(item => {
+        const div = document.createElement("div");
         div.innerHTML = JSON.stringify(item);
 
         main.appendChild(div);

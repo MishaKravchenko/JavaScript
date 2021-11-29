@@ -1,3 +1,4 @@
+// С Т А Р І   Т А С К И    (js_demos/kminV/Lesson5);
 // // T A S K 1
 // // Реалізовуємо свій компютерний магазин.
 //
@@ -344,52 +345,52 @@
 //
 
 
-function Girl(name, age, footSize) {
-
-    this.name = name;
-    this.age = age;
-    this.footSize = footSize;
-}
-
-let girl1 = new Girl("Sveta", 18, 36);
-let girl2 = new Girl("Lena", 19, 37);
-let girl3 = new Girl("Vika", 20, 38);
-let girl4 = new Girl("Veronika", 21, 39);
-let girl5 = new Girl("Vera", 22, 40);
-let girl6 = new Girl("Nadezhda", 23, 41);
-let girl7 = new Girl("Lyubov", 24, 42);
-let girl8 = new Girl("Larisa", 25, 43);
-let girl9 = new Girl("Natasha", 26, 44);
-let girl10 = new Girl("Angelina", 27, 45);
-
-let girl = [girl1, girl2, girl3, girl4, girl5, girl6, girl7, girl8, girl9, girl10];
-console.log(girl);
-
-
-function Prince(name, age, shoesSize) {
-
-    this.name = name;
-    this.age = age;
-    this.shoesSize = shoesSize;
-    this.findGirl = function (arr) {
-        let find = null;
-        for (let item of arr) {
-            if (item.footSize === this.shoesSize) {
-                find = item;
-
-            }
-        }
-        if (find) {
-            console.log(`My name is ${find.name}`);
-        } else {
-            console.log(`I'm not find my girl`);
-        }
-
-    }
-    }
-
-let prince = new Prince("Romeo", 23, 45);
-prince.findGirl(girl);
+// function Girl(name, age, footSize) {
+//
+//     this.name = name;
+//     this.age = age;
+//     this.footSize = footSize;
+// }
+//
+// let girl1 = new Girl("Sveta", 18, 36);
+// let girl2 = new Girl("Lena", 19, 37);
+// let girl3 = new Girl("Vika", 20, 38);
+// let girl4 = new Girl("Veronika", 21, 39);
+// let girl5 = new Girl("Vera", 22, 40);
+// let girl6 = new Girl("Nadezhda", 23, 41);
+// let girl7 = new Girl("Lyubov", 24, 42);
+// let girl8 = new Girl("Larisa", 25, 43);
+// let girl9 = new Girl("Natasha", 26, 44);
+// let girl10 = new Girl("Angelina", 27, 45);
+//
+// let girl = [girl1, girl2, girl3, girl4, girl5, girl6, girl7, girl8, girl9, girl10];
+// console.log(girl);
+//
+//
+// function Prince(name, age, shoesSize) {
+//
+//     this.name = name;
+//     this.age = age;
+//     this.shoesSize = shoesSize;
+//     this.findGirl = function (arr) {
+//         let find = null;
+//         for (let item of arr) {
+//             if (item.footSize === this.shoesSize) {
+//                 find = item;
+//
+//             }
+//         }
+//         if (find) {
+//             console.log(`My name is ${find.name}`);
+//         } else {
+//             console.log(`I'm not find my girl`);
+//         }
+//
+//     }
+//     }
+//
+// let prince = new Prince("Romeo", 23, 45);
+// prince.findGirl(girl);
 
 
 // ДОДАТКОВО
@@ -455,3 +456,182 @@ prince.findGirl(girl);
 //     return cars;
 // }
 // console.log(arr(car1, car2, car3, car4, car5, car6, car7, car8, car9, car10,));
+
+
+// Н О В І   Т А С К И    (js_demos/kminV/Lesson5)
+
+// - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
+// створити пустий масив, наповнити його 10 об'єктами new User(....)
+// function User(id, name, surname, email, phone){
+//     this.id = id;
+//     this.name = name;
+//     this.surname = surname;
+//     this.email = email;
+//     this.phone = phone;
+// }
+// let users = [
+//     new User(120,"Sasha", "Hillz", "kalyaki_malyaki_1@dindon.com",123621584151515),
+//     new User(233,"Masha", "Pillz", "kalyaki_malyaki_2@dindon.com",342461584141515),
+//     new User(344,"Dasha", "Killz", "kalyaki_malyaki_3@dindon.com",2342354151514235),
+//     new User(455,"Pasha", "Qillz", "kalyaki_malyaki_4@dindon.com",5345363466151515),
+//     new User(256,"Gasha", "Zillz", "kalyaki_malyaki_5@dindon.com",3463466158415115),
+//     new User(164,"Basha", "Gillz", "kalyaki_malyaki_6@dindon.com",7457461584151515),
+//     new User(447,"Nasha", "Nillz", "kalyaki_malyaki_7@dindon.com",7445761584151515),
+//     new User(538,"Casha", "Jillz", "kalyaki_malyaki_8@dindon.com",7454745761581515),
+//     new User(649,"Xasha", "Killz", "kalyaki_malyaki_9@dindon.com",7458456158415115),
+//     new User(510,"Rasha","Lillz", "kalyaki_malyaki_10@dindon.com",121426158415115),
+// ]
+// console.log(users);
+
+// - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
+// let filter = users.filter(value =>value.id % 2 === 0);
+// console.log(filter);
+
+// - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
+// users.sort((a, b) => {
+//   return a.id - b.id;
+// })
+
+// - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+// створити пустий масив, наповнити його 10 об'єктами Client
+// function Client(id, name, surname , email, phone, order){
+//     this.id = id;
+//     this.name = name;
+//     this.surname = surname;
+//     this.email = email;
+//     this.phone = phone;
+//     this.order = order;
+// }
+// clients = [
+//     new Client(120,"Sasha", "Hillz", "kalyaki_malyaki_1@dindon.com",123621584151515,["kvas","taras","bit","coin","post","punk"]),
+//     new Client(233,"Masha", "Pillz", "kalyaki_malyaki_2@dindon.com",342461584141515,["bit","coin"]),
+//     new Client(344,"Dasha", "Killz", "kalyaki_malyaki_3@dindon.com",2342354151514235,["corn","pop","bit","coin","bit","coin"]),
+//     new Client(455,"Pasha", "Qillz", "kalyaki_malyaki_4@dindon.com",5345363466151515,["pop","korm","bit","coin","bit","coin","bit","coin"]),
+//     new Client(256,"Gasha", "Zillz", "kalyaki_malyaki_5@dindon.com",3463466158415115,["hip","hop","post","punk"]),
+//     new Client(164,"Basha", "Gillz", "kalyaki_malyaki_6@dindon.com",7457461584151515,["post","punk"]),
+//     new Client(447,"Nasha", "Nillz", "kalyaki_malyaki_7@dindon.com",7445761584151515,["punki","hoi","post","punk"]),
+//     new Client(538,"Casha", "Jillz", "kalyaki_malyaki_8@dindon.com",7454745761581515,["tsoi","zhiv","kvas"]),
+//     new Client(649,"Xasha", "Killz", "kalyaki_malyaki_9@dindon.com",7458456158415115,["taras","kvas"]),
+//     new Client(510,"Rasha","Lillz", "kalyaki_malyaki_10@dindon.com",121426158415115,["kvas","kamaz","kvas","kamaz","kvas","kamaz","kvas","kamaz","kvas","kamaz"])
+// ];
+
+// - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
+// clients.sort((a, b) => {
+//    return a.order.length - b.order.length;
+// })
+// console.log(clients);
+
+
+// - Створити клас або функцію конструктор, за допомоги якої можна створювати об'єкти наступного вигляду.
+// Конструктор повинен приймати значення для кожної властивості, в т.ч і для властивостей внутрішніх об'єктів
+//
+// let example = {
+//     id: 1,
+//     name: 'Leanne Graham',
+//     username: 'Bret',
+//     email: 'Sincere@april.biz',
+//     address: {
+//         street: 'Kulas Light',
+//         suite: 'Apt. 556',
+//         city: 'Gwenborough',
+//         zipcode: '92998-3874',
+//         geo: {
+//             lat: '-37.3159',
+//             lng: '81.1496'
+//         }
+//     },
+//     phone: '1-770-736-8031 x56442',
+//     website: 'hildegard.org',
+//     company: {
+//         name: 'Romaguera-Crona',
+//         catchPhrase: 'Multi-layered client-server neural-net',
+//         bs: 'harness real-time e-markets'
+//     }
+// }
+
+// Принцип запису вложених об'єктів в Class така сама як і в ф-ції конструктора, тільки в класі пишемо в конструкторі.
+// function User(id,nameUser,username,email,street,suite,city,zipcode, lat, lng, phone, website,nameCompany,catchPhrase,bs) {
+//     this.id = id;
+//     this.name = nameUser;
+//     this.username = username;
+//     this.email = email;
+//     this.address = {
+//         street: street,
+//         suite: suite,
+//         city: city,
+//         zipcode: zipcode,
+//         geo: {
+//             lat: lat,
+//             lng: lng
+//         },
+//     }
+//     this.phone = phone;
+//     this.website = website;
+//     this.company = {
+//         name: nameCompany,
+//         catchPhrase: catchPhrase,
+//         bs: bs
+//     };
+// }
+//
+// let user1 = new User(1,'Leanne Graham','Bret','Sincere@april.biz','Kulas Light','Apt. 556','Gwenborough','92998-3874','-37.3159','81.1496','1-770-736-8031 x56442','hildegard.org','Romaguera-Crona','Multi-layered client-server neural-net','harness real-time e-markets');
+// console.log(user1);
+
+// -  Створити функцію конструктор / клас  який описує об'єкт тегу
+// Поля :
+//     -назва тегу ()
+// - опис його дій
+// - масив з атрибутами (2-3 атрибути максимум)
+// Кожен атрибут описати як окремий який буде містити
+// -назву атрибуту
+// -опис дії атрибуту
+// інформацію брати з htmlbook.ru
+//
+// Таким чином описати теги
+// -a
+// -div
+// -h1
+// -span
+// -input
+// -form
+// -option
+// -select
+// Приклад результуючого об'єкту
+// {
+//     titleOfTag: 'area',
+//         action: `Каждый элемент <area> определяет активные области изображения, которые являются ссылками...`,
+//     attrs: [
+//     {titleOfAttr: 'accesskey', actionOfAttr: 'Переход к области с помощью комбинации клавиш'},
+//     {/*some props and values*/},
+//     {/*...*/},
+//     {/*...*/},
+// ]
+//
+// }
+
+function Tag(titleOfTag, action, titleOfAttr1, actionOfAttr1, titleOfAttr2, actionOfAttr2, titleOfAttr3, actionOfAttr3) {
+    this.titleOfTag = titleOfTag;
+    this.action = action;
+    this.attrs = [
+        {titleOfAttr1: titleOfAttr1, actionOfAttr1: actionOfAttr1},
+        {titleOfAttr2: titleOfAttr2, actionOfAttr2: actionOfAttr2},
+        {titleOfAttr3: titleOfAttr3, actionOfAttr3: actionOfAttr3}]
+}
+
+let a = new Tag("a","Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок.","accesskey","Активация ссылки с помощью комбинации клавиш.","coords","Устанавливает координаты активной области.","download","Предлагает скачать указанный по ссылке файл.");
+let div = new Tag("div","Элемент div является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого.","align","Задает выравнивание содержимого тега div","title","Добавляет всплывающую подсказку к содержимому.","-","-");
+let h1 = new Tag("h1","HTML предлагает шесть заголовков разного уровня, которые показывают относительную важность секции, расположенной после заголовка.","align","Определяет выравнивание заголовка.","-","-","-","-");
+let span = new Tag("span","Тег span предназначен для определения строчных элементов документа. ","-","-","-","-","-","-");
+let input = new Tag("input","Тег input является одним из разносторонних элементов формы и позволяет создавать разные элементы интерфейса и обеспечить взаимодействие с пользователем.","accept","Устанавливает фильтр на типы файлов, которые вы можете отправить через поле загрузки файлов.","accesskey","Переход к элементу с помощью комбинации клавиш.","align","Определяет выравнивание изображения.");
+let form = new Tag("form","Тег form устанавливает форму на веб-странице.","accept-charset","Устанавливает кодировку, в которой сервер может принимать и обрабатывать данные.","action","Адрес программы или документа, который обрабатывает данные формы.","autocomplete","Включает автозаполнение полей формы.");
+let option = new Tag("option","Тег option определяет отдельные пункты списка, создаваемого с помощью контейнера select. ","disabled","Заблокировать для доступа элемент списка.","label","Указание метки пункта списка.","selected","Заранее устанавливает определенный пункт списка выделенным.");
+let select = new Tag("select","Тег select позволяет создать элемент интерфейса в виде раскрывающегося списка, а также список с одним или множественным выбором, как показано далее.","accesskey","Позволяет перейти к списку с помощью некоторого сочетания клавиш.","autofocus","Устанавливает, что список получает фокус после загрузки страницы.","disabled","Блокирует доступ и изменение элемента.");
+
+console.log(div);
+console.log(a);
+console.log(h1);
+console.log(span);
+console.log(input);
+console.log(form);
+console.log(option);
+console.log(select);

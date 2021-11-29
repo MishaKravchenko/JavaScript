@@ -1,4 +1,5 @@
 // С Т А Р І   Т А С К И    (js_demos/kminV/Lesson6)
+
 // 1) Створити масив з 20 чисел та:
 //     a) відсортувати його від меншого до більшого.
 //прикол в том, шо цей метод змінює і первоначальний масив.
@@ -432,35 +433,17 @@
 //     let nums = [11,21,3];
 // sortNums('ascending') // [3,11,21]
 // sortNums('descending') // [21,11,3]
-// Я НЕ ЗНАЮ(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
-// let sortNums = function (arr, direction) {
-//     arr.sort((a, b) => {
-//
-//         return direction;
-//     })
-//     return arr;
-// }
-//
-// let ascending = function (a,b) {
-//     return b-a;
-// }
-// let descending = function (a,b) {
-//     return a-b;
-// }
-//
-// let sortNums1 = sortNums([12, 3, 12, 12, 3, 123, 123, 123, 123, 56, 7, 56, 43, 346, 346], ascending);
-// console.log(sortNums1);
-//
-// function first (y){
-//     console.log(1);
-//     y()
-// }
-//
-// function second (){
-//     console.log(2);
-// }
-// first(second);
 
+// function sortNums (numbers, direction){
+//     let sortedArray = [];
+//     if (direction ==="asc"){
+//         console.log(sortedArray = numbers.sort((a, b) => a - b));
+//     }else if (direction === "desc"){
+//         console.log(sortedArray = numbers.sort((a, b) => b - a));
+//     }
+//     return sortedArray;
+// }
+// sortNums([3,123,123,123,12,31,23,12,3,12],"desc");
 
 // - є масив
 // let coursesAndDurationArray = [
@@ -532,13 +515,12 @@
 // notValid( "     dirty string   ", "     ABRAKADABRA   ", "     ChUpApPi       MuNyAnIyO   ", "     ASasfklASF   ");
 
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
-//     let str = 'Каждый охотник желает знать';
-// let arr = stringToarray(str);
-// document.writeln(arr); // ['Каждый', 'охотник', 'желает', 'знать']
-// let stringToArray = function (str){
-// return  str.split(" ");
+// ['Каждый', 'охотник', 'желает', 'знать']
+// let stringToArray = function (str) {
+//     return console.log(str.split(" "));
+//
 // }
-// console.log(stringToArray("Каждый охотник желает знать"));
+// stringToArray("Каждый охотник желает знать");
 
 // - Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
 //     let str = 'Каждый охотник желает знать';
@@ -581,7 +563,7 @@
 // можна дізнатись індекси пробілів, збільшити цей індекс на один, і циклом виставити їм леттерКапс тільки ще першу букву.
 // або сплітом розділити і кожне слово буде під своїм індексом, тільки теж додати першу букву бо там немає пробіла.
 // upd: з циклами не вийшло, перетворити масив в стрінгу.// Метод join() объединяет все элементы массива в строку.(в дужках сіпаратор)
-// substr // substring // slice // - - В чому прикол?????
+// substr // substring // slice // - - В чому між ними різниця???
 // function capitalize(str) {
 //     return str
 //         .toLowerCase()

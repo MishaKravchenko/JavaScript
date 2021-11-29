@@ -527,11 +527,11 @@
 // }
 // paragraph("Lorem ipsum");
 
-// - спитатись, шось не виходить. 526 рядок
+// - спитатись, шось не виходить. 534 рядок
 // let paragraph = function (someText){
 //     let prg = document.createElement("p");
-//     document.body.appendChild("p");
 //     prg.textContent = (someText);
+//     document.body.appendChild("p");
 // }
 // paragraph("Some text");
 

@@ -1,4 +1,4 @@
-
+// С Т А Р І  Т А С К И       (js_demos/kminV/Lesson1)
 // - Створити змінні. Присвоїти кожному з них значення: 'hello','owu','com', 'ua', 1, 10, -999, 123, 3.14, 2.7, 16, true, false.
 //     Вивести кожну змінну за допомогою: console.log , alert, document.write
 // let greeting = "hello";
@@ -497,7 +497,80 @@
 // }
 
 
+// Н О В І  Т А С К И       (js_demos/js/preview/lesson1)
 
+// 1. Створити масив з 10 чисел (можна використовувати Math.random Та Math.floor). Скласти результат цих чисел в змінній result.
+//1. Спосіб
+// let arr = [1,2,3,4,5,6,7,8,9,0];
+// let result = 0;
+// for (let number of arr) {
+//     result += number;
+// }
+// console.log(result);
+//2. Спосіб
+// let arrRandom = [];
+// for (let i = 0; i < 10; i++) {
+//     arrRandom.push(Math.floor(Math.random()*100));
+// }
+// console.log(arrRandom);
+// let result1 = 0;
+// for (let number1 of arrRandom) {
+//     result1 += number1;
+// }
+// console.log(result1)
 
+// 2. Створити об'єкт book з наступними полями  - назва, кількість сторінок, жанр
+// let book = {name:"ABC", number:4, genre:"child"};
+// console.log(book);
 
+// 3. Створити об'єкт book з наступними полями  - назва, кількість сторінок, жанр, автори
+// let book = {name:"ABC", number:4, genre:"child", author:"QWERTY", title:true};
+// console.log(book);
+
+// 4. Створити маис об'єктів book з наступними полями  - назва, кількість сторінок, жанр, автори. Вивести кожну книгу як окремий об'єкт
+// let book = [
+//     {name:"ABC", number:4, genre:"child1", author:"QWERTY", title:true},
+//     {name:"ADB", number:5, genre:"child2", author:"QWERTY", title:false},
+//     {name:"ACA", number:6, genre:"child3", author:"QWERTY", title:true},
+//     {name:"AAS", number:4, genre:"child4", author:"QWERTY", title:false},
+//     {name:"ASD", number:6, genre:"child5", author:"QWERTY", title:true},
+//     {name:"ABA", number:7, genre:"child6", author:"QWERTY", title:false},
+//     {name:"ABD", number:8, genre:"child7", author:"QWERTY", title:true},
+// ];
+// for (const bookElement of book) {
+//     console.log(bookElement);
+// }
+
+// 5. Напишіть код, який вираховує площу прямокутника висотою 23см. (змінна height) та шириною 10см (змінна width).
+// Значення площі зберігати в змінній s.
+// let height = 23;
+// let width = 10;
+// s = height*width;
+// console.log(s);
+
+// 6. Напиши код, який знаходить об'єм циліндра заввишки 10м (змінна heightC) та діаметром основи 4м (dC),
+// результат помістіть у змінну v.
+// let height = 10;
+// let radius = 2;
+// let result;
+// let s1 = Math.PI * Math.pow(radius,2);
+// let s2 = 2 * Math.PI * radius * height;
+// result = Math.round((s1 * 2) + s2);
+// console.log(result);
+
+// 7. У прямокутного трикутника дві сторони n (зі значенням 3) та m (зі значенням 4).
+// Знайдіть гіпотенузу k за теоремою Піфагора (потрібно використовувати функцію Math.pow (число, ступінь) або оператор зведення в ступінь **).
+// let n = 3;
+// let m = 4;
+// let c;
+// c= Math.pow(Math.pow(n,2) + Math.pow(m,2),1/2);
+// console.log(c);
+
+// - Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ. З'єднати їх в одну змінну person. (Не об'єкт)
+// firstName = "Ramos";
+// middleName = "Mikromolekula 1100";
+// lastName = "Mahmud Stepanovych";
+//
+// let person = (`${firstName} ${middleName} ${lastName}`);
+// console.log(person);
 

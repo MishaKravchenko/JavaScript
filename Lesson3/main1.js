@@ -1,3 +1,7 @@
+// С Т А Р І  Т А С К И (js_demos/kminV/Lesson3/)
+// Н О В І  Т А С К И (js_demos/js/preview/lesson8/)
+// ВОНИ СПІВПАДАЮТЬ
+
 // - Візьміть файл template1.html, підключіть до нього скрипт, і працюйте в ньому.
 // 1) Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
 // a) отримує текст з параграфа з id "content"

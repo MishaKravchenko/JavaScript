@@ -531,7 +531,7 @@
 // let paragraph = function (someText){
 //     let prg = document.createElement("p");
 //     prg.textContent = (someText);
-//     document.body.appendChild("p");
+//     document.body.appendChild(prg);
 // }
 // paragraph("Some text");
 

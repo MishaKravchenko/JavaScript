@@ -221,6 +221,17 @@
 //     {title: 'FullStack', monthDuration: 7},
 //     {title: 'Frontend', monthDuration: 4}
 // ];
+//
+// let generalDiv = document.createElement("div");
+// document.body.appendChild(generalDiv);
+//
+// coursesAndDurationArray.forEach(item=>{
+//     let div = document.createElement("div");
+//     generalDiv.appendChild(div);
+//     for (const key in item) {
+//         div.innerText += `${key}:  ${item[key]} - - `
+//     }
+// })
 
 // T A S K 6
 
@@ -236,6 +247,26 @@
 //     {title: 'FullStack', monthDuration: 7},
 //     {title: 'Frontend', monthDuration: 4}
 // ];
+//
+// coursesAndDurationArray.forEach(item=>{
+//     let divElement = document.createElement("div");
+//     divElement.classList.add("item");
+//     document.body.appendChild(divElement);
+//     for (const key in item) {
+//         if (key === "title"){
+//             let h1Element = document.createElement("h1");
+//             h1Element.classList.add("heading");
+//             h1Element.innerText = `${key} - - ${item[key]}`
+//             divElement.appendChild(h1Element);
+//         }else{
+//             let pElement = document.createElement("p");
+//             pElement.classList.add("description");
+//             pElement.innerText = `${key} - - ${item[key]}`
+//             divElement.appendChild(pElement);
+//         }
+//     }
+// })
+
 
 // З А М И К А Н Н Я
 // ЗАМИКАННЯ - - ЦЕ ФУНКЦІЯ РАЗОМ З УСІМА ЗОВНІШНІМИ ЗМІННИМИ, ЯКІ ЇЙ ДОСТУПНІ.

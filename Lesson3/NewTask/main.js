@@ -1,3 +1,5 @@
+// Н О В І  Т А С К И (js_demos/js/preview/lesson9/)
+
 // T A S K 1
 
 // - є масив
@@ -267,29 +269,191 @@
 //     }
 // })
 
+// T A S K 7
 
-// З А М И К А Н Н Я
-// ЗАМИКАННЯ - - ЦЕ ФУНКЦІЯ РАЗОМ З УСІМА ЗОВНІШНІМИ ЗМІННИМИ, ЯКІ ЇЙ ДОСТУПНІ.
-// БЕЗ ПОСИЛАННЯ НА ВНУТРІШНІЙ ОБ’ЄКТ ЗАМИКАННЯ НЕ БУДЕ.  НАША ЗМІННА ПОВИННА СТОЯТИ ВСЕРЕДИНІ БЛОКУ ІНІЦІАЛІЗАЦІЇ АБО ВСЕРЕДИНІ Ф-ЦІЇ.
-// ЗАМИКАННЯ ДАЄ НАМ МОЖЛИВІСТЬ ЗРОБИТИ ТАКУ СОБІ НАПІВ ХВОРУ ІНКАПСУЛЯЦІЮ. МОЖЛИВІСТЬ ЗАКРИТИ ДОСТУП ДО ПОЛІВ ДАНОГО ОБ’ЄКТА .
-// ЗАМИКАННЯ - - ЦЕ МОЖЛИВІСТЬ ФУНКЦІЇ ЗБЕРІГАТИ ПОСИЛАННЯ НА ЛОКАЛЬНИЙ ОБ’ЄКТ. І ЗБЕРІГАЄТЬСЯ ЦЕЙ ЛОКАЛЬНИЙ ОБ’ЄКТ НЕ В САМІЙ ФУНКЦІЇ, А Є ТАКА ШТУКА ЯК LEXICAL ENVIRONMENT (ЛЕКСИЧНЕ СЕРЕДОВИЩЕ).
-// КОЖНА Ф-ЦІЯ ПРИ СТВОРЕННІ ОТРИМУЄ СИЛКУ [[SCOPE]] НА ОБ'ЄКТ ІЗ ЗМІННИМИ, В КОНТЕКСТІ ЯКОГО БУЛА СТВОРЕНА.
-
-// function foobar() {
-//     let x = 100;
-//     let userWorker = {
-//         xxx: function () {
-//             console.log(x);
+// - Є масив :
+//     Створити під кожен елемент коремий блок. В цьому блоціт, під кожну властивісь, створити окремий блок. Для властивості modules зробити список в цьому ж  блоці (в якому знаходиться все)
+// let courses = [
+//     {
+//         title: 'JavaScript Complex',
+//         monthDuration: 5,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js'],
+//         logo: '',
+//         price: 0,
+//         rating: 5,
+//         avgResult: 99
+//     },
+//     {
+//         title: 'Java Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'react',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'java core',
+//             'java advanced'],
+//         logo: '',
+//         price: 0,
+//         rating: 4.998,
+//         avgResult: 97
+//     },
+//     {
+//         title: 'Python Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'react',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'python core',
+//             'python advanced'],
+//         logo: '',
+//         price: 0,
+//         rating: 4.812,
+//         avgResult: 98
+//     },
+//     {
+//         title: 'QA Complex',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'QA/QC'],
+//         logo: '',
+//         price: 0,
+//         rating: 4.65,
+//         avgResult: 97
+//     },
+//     {
+//         title: 'FullStack',
+//         monthDuration: 7,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'react',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'node.js',
+//             'python',
+//             'java'],
+//         logo: '',
+//         price: 0,
+//         rating: 4.772,
+//         avgResult: 100
+//     },
+//     {
+//         title: 'Frontend',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass'],
+//         logo: '',
+//         price: 0,
+//         rating: 4.53,
+//         avgResult: 90
+//     }
+// ];
+//
+// courses.forEach(item => {
+//     let div = document.createElement("div");
+//     document.body.appendChild(div);
+//     for (const key in item) {
+//         if (key === "title") {
+//             let h3Element = document.createElement("h3");
+//             h3Element.innerText = `${key} - - ${item[key]}`
+//             div.appendChild(h3Element);
+//         } else if (key !== "title" && key !== "modules") {
+//             let divElement = document.createElement("div");
+//             divElement.innerText = `${key} - - ${item[key]}`
+//             div.appendChild(divElement);
+//         } else {
+//             item.modules.forEach(module=>{
+//                 let liElement = document.createElement("li");
+//                 liElement.innerText = `${module}`
+//                 div.appendChild(liElement);
+//             })
+//
 //         }
-//     };
-//     return   userWorker;
-// }
-// let foobar1 = foobar()
-// console.log(foobar1);
-// foobar1.xxx()
-// Замикання також би вийшло якби ми не присвоювали foobar1.
-// foobar().xxx()
+//     }
+// })
 
-// ЯК Я ПОНЯВ.. ЯЩО МИ БУДЕМО ЛОГАТИ ЦЕЙ ІКС, ТО ВИДАСТЬ ПОМИЛКУ, ТОМУ ЩО ТОЙ ІКС ЖИВЕ ЛИШЕ ВСЕРЕДИНІ ФУНКЦІЇ, ФУНКЦІЯ ВІДПРАЦЮВАЛА І ВМЕРЛА. МИ ВИВОДИМ ІКС, А БРАУЗЕР ЙОГО НЕБАЧЕ. ТОЙ ІКС МОЖНА ВИВЕСТИ ЯКЩО ЗРОБИТИ return х; ЗАМІСТЬ ЮЗЕРВОРКЕРА І ВИКЛИКАТИ ФУНКЦІЮ ФУБАР. А МОЖНА ВИВЕСТИ НАШОЮ ВНУТРІШНЬОЮ Ф-ЦІЄЮ І ОСЬ ТУТ ПРИКОЛ. МИ ПРОХОДИМСЯ ПО НАШІЙ ФУНКЦІЇ, І КАЗАЛОСЬ БИ НЕ МАЄМ ЗНАТИ ЯКОМУ ЗНАЧЕННЮ ДОРІВНЮЄ ІКС, АЛЕ ТЕ ЗНАЧЕННЯ ЗБЕРЕГЛОСЯ В НЕВИДИМОМУ ОБ'ЄКТІ НА ЛОКАЛЬНОМУ СЕРЕДОВИЩІ, В ЯКЕ МИ ПОТРАПЛЯЄМ ПРИ ВИКЛИКІ НАШОЇ Ф-ЦІЇ ПО ОСОБЛИВІЙ СИЛЦІ [[SCOPE]]. ЦЕЙ ІКС - ІНКАПСУЛЬОВАНИЙ. І МИ НЕ МОЖЕМО НІ ЛОГНУТИ НІ ПЕРЕПРИСВОЇТИ ЙОГО ПОЗА НАШОЮ ФУНКЦІЄЮ.
-// console.log(x);
-// let x = 10550
+// T A S K 8
+
+// - З масиву users за допомогою циклу витягнути адреси користувачів і записати (скопіювати) їх в інший порожній масив.
+// - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement. Всі данні в одному блоці.
+// - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
+// - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
+
+let users = [{
+    name: 'vasya',
+    age: 31,
+    status: false,
+    address: {city: 'Lviv', country: 'Ukraine', street: 'Shevchenko', houseNumber: 1}
+}, {
+    name: 'petya',
+    age: 30,
+    status: true,
+    address: {city: 'New York', country: 'USA', street: 'East str', houseNumber: 21}
+}, {
+    name: 'kolya',
+    age: 29,
+    status: true,
+    address: {city: 'Budapest', country: 'Hungary', street: 'Kuraku', houseNumber: 78}
+}, {
+    name: 'olya',
+    age: 28,
+    status: false,
+    address: {city: 'Prague', country: 'Czech', street: 'Paster', houseNumber: 56}
+}, {
+    name: 'max',
+    age: 30,
+    status: true,
+    address: {city: 'Istanbul', country: 'Turkey', street: 'Mikar', houseNumber: 39}
+}, {
+    name: 'anya',
+    age: 31,
+    status: false,
+    address: {city: 'Rio', country: 'Brasil', street: 'Ronaldi', houseNumber: 5}
+}, {
+    name: 'oleg',
+    age: 28,
+    status: false,
+    address: {city: 'Montreal', country: 'Canada', street: 'Acusto', houseNumber: 90}
+}, {
+    name: 'andrey',
+    age: 29,
+    status: true,
+    address: {city: 'Quebeck', country: 'Canada', street: 'Binaro', houseNumber: 33}
+}, {
+    name: 'masha',
+    age: 30,
+    status: true,
+    address: {city: 'Moscow', country: 'Russia', street: 'Gogolia', houseNumber: 1}
+}, {
+    name: 'olya',
+    age: 31,
+    status: false,
+    address: {city: 'Portland', country: 'USA', street: 'Forest str', houseNumber: 4}
+}, {
+    name: 'max',
+    age: 31,
+    status: true,
+    address: {city: 'Cairo', country: 'Egypt', street: 'Seashore', houseNumber: 45}
+}];
+

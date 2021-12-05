@@ -100,7 +100,7 @@ let users = [{
     address: { city: 'Cairo', country: 'Egypt', street: 'Seashore', houseNumber: 45 }
 }];
 
-// 2) За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement.
+// 1) За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement.
 //     Вставити цей блок на сторінку
 
 for (let i = 0; i < users.length; i++) {
@@ -110,7 +110,7 @@ for (let i = 0; i < users.length; i++) {
     document.body.appendChild(userDiv);
 }
 
-// 3) Блок з адресою зробити окремим блоком, з блоками для кожної властивості
+// 2) Блок з адресою зробити окремим блоком, з блоками для кожної властивості
 
 // 1 спроба
 
@@ -141,33 +141,43 @@ for (let i = 0; i < users.length; i++) {
 // БЕЗ ДОКУМЕНТА! просто батьківський тег чи змінна крапка аппенчайлд (дочірня).
 //(*&^%$#$%^&*((*&^%$#$%^&*()*&^%$#$%^&*()(*&^%$#$%^&*()(*&^%$%^&*)
 
-for (let i = 0; i < users.length; i++) {
+// for (let i = 0; i < users.length; i++) {
+//
+//     let userDivAddress = document.createElement("div");
+//
+//     userDivAddress.style.backgroundColor = ("orange");
+//     userDivAddress.style.marginBottom = ("10px");
+//     userDivAddress.style.width = ("20%");
+//     userDivAddress.style.padding = ("100px 0");
+//     userDivAddress.style.textAlign = ("center");
+//     userDivAddress.textContent = ("pariruri pariram");
+//
+//     document.body.appendChild(userDivAddress);
+//
+//     let city = document.createElement("div");
+//     let country = document.createElement("div");
+//     let street = document.createElement("div");
+//     let houseNumber = document.createElement("div");
+//
+//     city.textContent = (`Місто ${users[i].address.city}`);
+//     country.textContent = (`Країна ${users[i].address.country}`);
+//     street.textContent = (` Вулиця${users[i].address.street}`);
+//     houseNumber.textContent = (`Номер будинку ${users[i].address.houseNumber}`);
+//
+//     userDivAddress.appendChild(city);
+//     userDivAddress.appendChild(country);
+//     userDivAddress.appendChild(street);
+//     userDivAddress.appendChild(houseNumber);
+//
+// }
 
-    let userDivAddress = document.createElement("div");
+// 3. За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement. Всі данні в одному блоці.
 
-    userDivAddress.style.backgroundColor = ("orange");
-    userDivAddress.style.marginBottom = ("10px");
-    userDivAddress.style.width = ("20%");
-    userDivAddress.style.padding = ("100px 0");
-    userDivAddress.style.textAlign = ("center");
-    userDivAddress.textContent = ("pariruri pariram");
-
-    document.body.appendChild(userDivAddress);
-
-    let city = document.createElement("div");
-    let country = document.createElement("div");
-    let street = document.createElement("div");
-    let houseNumber = document.createElement("div");
-
-    city.textContent = (`Місто ${users[i].address.city}`);
-    country.textContent = (`Країна ${users[i].address.country}`);
-    street.textContent = (` Вулиця${users[i].address.street}`);
-    houseNumber.textContent = (`Номер будинку ${users[i].address.houseNumber}`);
-
-    userDivAddress.appendChild(city);
-    userDivAddress.appendChild(country);
-    userDivAddress.appendChild(street);
-    userDivAddress.appendChild(houseNumber);
-
-}
-
+// let arr = [];
+// users.forEach(item => {
+//     for (let key in item) {
+//         if (key === "address")
+//             arr.push(item[key])
+//     }
+// })
+// console.log(arr);

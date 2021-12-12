@@ -219,18 +219,7 @@
 // })
 
 // // P R O M I S E
-// Не зміг переробити коллбек в проміси. Описав кожну ф-цію як в прикладі.
-// let dailyRoutines = (titleDay, goodDay, badDay) => {
-//     return (cb) => {
-//         setTimeout(randomCause => {
-//             document.write(`${titleDay}<br>`)
-//             if (Math.random() < 0.3)
-//                 cb(`${badDay}<br>`)
-//             else
-//                 cb(null, `${goodDay}<br>`)
-//         }, Math.random() * 5000)
-//     }
-// }
+// Якщо в CallBackHell видає err - то його спокійно js виводить, з промісами ситуація трохи інша. Коли в нас стається помилка, ми її ніде не очікуєм і того джс її тупо видаляє. Тому треба застосувати особливу синтаксичну конструкцію. Reason - приймає значення реджекта, і value - резолва. Щоб нам відловити нашу помилку пишемо .catch( reason . . . і воно буде відловлювати нашу помилку, ми поміщаєм її в змінну і вже робимо з нею що хочимо.
 
 // function dailyRoutines () {
 //     return new Promise((resolve) => {
@@ -389,12 +378,114 @@
 //         document.write(`${lunch}<br>`);
 //         return dinner(false);
 //     })
-//     .catch(dinner =>{
+//     .then(dinner =>{
 //         document.write(`${dinner}<br>`);
+//         return dinner(false);
+//     })
+//     // В А Ж Л И В О
+//     .catch(reason =>{
+//         document.write(`${reason}<br>`);
+//         alert(reason);
 //     })
 //     .finally(() =>{
 //         document.write('Мій розпорядок дня закінчився!');
 //     })
+
+// A S Y N C. A W A I T
+// Тут схожа ситуація до промісів. Якщо в нас не проходе умова по резолву. То наш код валиться і видає помилку. Але інакший спосіб відловлення помилки. Ми кладемо потенційно небезпечний код в try. i catch'ом відловлюєм помилку, якщо вона станеться.
+
+// let dailyRoutines = (titleDay, goodDay, badDay) => {
+//     return async () => {
+//         await later(Math.random() * 1000)
+//         document.write(`${titleDay}<br>`)
+//         if (Math.random() < 0.3)
+//             throw new Error(`${badDay}<br>`)
+//         else
+//             return `${goodDay}<br>`
+//     }
+// }
+//
+// let later = (delay, value) =>
+//     new Promise(resolve => setTimeout(resolve, delay, value));
+//
+// let wakeUp = dailyRoutines(
+//     "1. 7:20",
+//     "Розплющив очі",
+//     "Забув розплющити очі",
+// )
+//
+// let getUp = dailyRoutines(
+//     "2. 7:21",
+//     "Прокинувся",
+//     "Але забув прокинутись",
+// )
+//
+// let makeMyBed = dailyRoutines(
+//     "3. 7:22",
+//     "Заправив ліжко",
+//     "Але забув заправити ліжко",
+// )
+//
+// let brushMyTeeth = dailyRoutines(
+//     "4. 7:23",
+//     "Почистив зуби",
+//     "Але забув почистити зуби",
+// )
+//
+// let combMyHair = dailyRoutines(
+//     "5. 7:24",
+//     "Розчесав волосся",
+//     "Але забув розчесати волосся",
+// )
+//
+// let getDressed = dailyRoutines(
+//     "6. 7:25",
+//     "Одягнувся",
+//     "Але забув одягнутися",
+// )
+//
+// let breakfast = dailyRoutines(
+//     "7. 7:26",
+//     "Снідаю",
+//     "Але забув поснідати",
+// )
+//
+// let goToSchool = dailyRoutines(
+//     "8. 7:27",
+//     "Йду до школи",
+//     "Але забув піти до школи",
+// )
+//
+// let lunch = dailyRoutines(
+//     "9. 12:00",
+//     "Обідаю",
+//     "Але забув пообідати",
+// )
+//
+// let dinner = dailyRoutines(
+//         "10. 17:00",
+//         "Вечеряю",
+//         "Але забув повечеряти",
+//     )
+//
+// ;(async _ => {
+//     try{
+//         document.write(await wakeUp())
+//         document.write(await getUp())
+//         document.write(await makeMyBed())
+//         document.write(await brushMyTeeth())
+//         document.write(await combMyHair())
+//         document.write(await getDressed())
+//         document.write(await breakfast())
+//         document.write(await goToSchool())
+//         document.write(await lunch())
+//         document.write(await dinner())
+//         document.write("Мій розпорядок дня закінчився!")
+//     } catch (err) {
+//         document.write(err)
+//     }
+// })()
+
 
 
 

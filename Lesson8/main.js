@@ -114,7 +114,7 @@
 // Данные вводить через соответсвующую форму.
 // --Каждому контакту добавить кнопку для удаления контакта.
 // --Каждому контакту добавить кнопку редактироваиня. При нажати на нее появляется форма, в которой есть все необходимые инпуты для редактирования, которые уже заполнены данными объекта
-// 1.1 Ну погнали. Витягуєм нашу форму з HTML. А з форми витягуєм кнопку сабміт, і прописуєм на неї код, який буде набирати наш об'єкт person значеннями які ми вводимо. Пишемо цикл, який буде перебирати всі елементи ЗА УМОВИ що вони мають name (окрім кнопки submit, бо вона теж має ім'я, але нам потрібні тільки значення з інпутів). І кажем що ключ, для нашого об'єкта person - буде слугувати name інпута, і цей ключ в свою чергу буде мати value (те значення яке ми вводимо з клавіатури). І для кожного юзера ми придумуєм свою айдішку. (getTime() Возвращает число миллисекунд, прошедших с 1 января 1970 года GMT+0, то есть того же вида, который используется в конструкторе new Date(milliseconds).
+// 1.1 Витягуєм нашу форму з HTML. А з форми витягуєм кнопку сабміт, і прописуєм на неї код, який буде набирати наш об'єкт person значеннями які ми вводимо. Пишемо цикл, який буде перебирати всі елементи ЗА УМОВИ що вони мають name (окрім кнопки submit, бо вона теж має ім'я, але нам потрібні тільки значення з інпутів). І кажем що ключ, для нашого об'єкта person - буде слугувати name інпута, і цей ключ в свою чергу буде мати value (те значення яке ми вводимо з клавіатури). І для кожного юзера ми придумуєм свою айдішку. (getTime() Возвращает число миллисекунд, прошедших с 1 января 1970 года GMT+0, то есть того же вида, который используется в конструкторе new Date(milliseconds).
 //2.1 Тепер пишем ф-цію, яка буде зберігати наші об'єкти person в масив localStorage. І в нас є дві ситуації коли ми сетаєм наш об'єкт person в перший раз, то нам спочатку треба створити той масив, а якшо будем сетати вдруге, то треба покласти об'єкт вже в існуючий масив. Якщо масива ще не існує, то localStorage.setItem(key: ARRAY_USERS, value: JSON.stringify([user])) створюєм його . . .
 // Якщо ж масив уже існує ми дістаємо його з локалСторейджу і парсимо його, щоб обробляти дані в джсі. І ДУЖЕ ВАЖЛИВА ПЕРЕВІРКА. В нас може існувати кнопка Edit, яка буде змінювати якийсь уже існуючий об'єкт в масиві, в цьому випадку нам не треба створювати новий об'єкт, нам треба ЗАМІНИТИ існуючий.Ми можемо змінити все, окрім наших унікальних айдішок, вони потрібні для того щоб доступитися до цих двох об'єктів і вже маніпулювати ними в джсі. Виконуємо пошук find (method arrayUsers, цей метод вертає тру або фолс), чи є в локал сторейджі.велью.така айдішка, як в нашого юзера чи ні. І слідує УМОВА. Якшо приходить тру то цей же самий масив, який ми запарсили, ми фільтруєм і кажем шо верни нам значення де айді локалСторейджу не дорівнюють нашому юзеру (по суті ми залишаємо в масиві нередаговані об'єкти і викидаємо той який хочемо замінити на змінений) і от наступної дією пушим в наш відфільтрований масив відредагований об'єкт юзер. В інкшому випадку просто пушим.
 //3.1. Пишемо ф-цію, яка буде доставати сформовані об'єкти в з локалСторейджу і виводити їх на HTML сторінку(ця функція бігає по всіх об'єктах масиву, і викликає функцію, яка описана нище, яка в свою чергу бігає по кожному значенню об'єкта) . Якщо є ключ ARRAY_USERS то ми парсимо цей масивчик в якусь змінну і проходимся по ньому,
@@ -124,119 +124,195 @@
 //5.1. Пишемо ф-цію, на кнопку "Delete", яка достає з локалСторейджу масив і фільтром лишає тільки ті в яких різні айдішки (по суті видаляє наш об'єкт). Location метод reload() - перезавантажує сторінку з поточною URL адресою.
 //6.1. І остання ф-ція на кнопку "Edit". Дістаєм масивчик, шукаєм в ньому наш об'єкт який хочемо відредагувати. Проходимся по всій формі, і якщо у елемента форми є нейм, то проходимся ще по нашому юзеру і присвоюємо йому змінені значення.
 
-const ARRAY_USERS = "ARRAY_USERS";
-let tempUser = {};
-let content = document.getElementById("content");
-const form1 = document.forms.form1;
+// const ARRAY_USERS = "ARRAY_USERS";
+// let tempUser = {};
+// let content = document.getElementById("content");
+// const form1 = document.forms.form1;
+//
+// //1.1.
+// form1.submit1.onclick = ev => {
+//     // ev.preventDefault(); відміняє дію браузера
+//     let person = {...tempUser};
+//     tempUser = {};
+//     for (let i = 0; i < form1.children.length; i++) {
+//         const form1Element = form1.children[i];
+//         if (form1Element.name && form1Element.type !== "submit") {
+//             person[form1Element.name] = form1Element.value;
+//         }
+//     }
+//     if (!person.id) {
+//         person.id = new Date().getTime();
+//     }
+//     console.log("person");
+//     console.log(person);
+//     saveUser(person);
+// }
+// getDataFromLSt()
+//
+// //2.1.
+// function saveUser(user) {
+//     if (localStorage.hasOwnProperty(ARRAY_USERS)) {
+//         const arrayUsers = JSON.parse(localStorage.getItem(ARRAY_USERS));
+//         const find = arrayUsers.find(value => value.id === user.id);
+//         if (find) {
+//             const filter = arrayUsers.filter(value => value.id !== user.id);
+//             filter.push(user);
+//             localStorage.setItem(ARRAY_USERS, JSON.stringify(filter));
+//         } else {
+//             arrayUsers.push(user)
+//             localStorage.setItem(ARRAY_USERS, JSON.stringify(arrayUsers));
+//         }
+//     } else {
+//         localStorage.setItem(ARRAY_USERS, JSON.stringify([user]))
+//     }
+// }
+//
+// //3.1.
+// function getDataFromLSt() {
+//     if (localStorage.hasOwnProperty(ARRAY_USERS)) {
+//         const arrUser = JSON.parse(localStorage.getItem(ARRAY_USERS))
+//         for (const user of arrUser) {
+//             content.appendChild(createDivPerson(user));
+//         }
+//     }
+// }
+//
+// //4.1
+// function createDivPerson(user) {
+//     const main = document.createElement("div");
+//     let flag = true;
+//     for (const key in user) {
+//         if (flag) {
+//             const h3 = document.createElement("h3");
+//             h3.innerText = key + " : " + user[key];
+//             main.appendChild(h3);
+//             flag = false;
+//         } else {
+//             const p = document.createElement("p");
+//             p.innerText = key + " : " + user[key];
+//             main.appendChild(p);
+//         }
+//     }
+//     main.style = "width: 300px; border:red 1px solid; float: left";
+//     const b1 = document.createElement("button");
+//     const b2 = document.createElement("button");
+//     b1.innerText = "Edit";
+//     b2.innerText = "Delete";
+//
+//     b1.onclick = function () {
+//         editUser(user.id);
+//     }
+//
+//     b2.onclick = function () {
+//         deleteUser(user.id);
+//     }
+//
+//     main.appendChild(b1);
+//     main.appendChild(b2);
+//
+//     return main;
+// }
+//
+// //5.1.
+// function deleteUser(id) {
+//     const parse = JSON.parse(localStorage.getItem(ARRAY_USERS));
+//     const filter = parse.filter(user => user.id !== id);
+//     localStorage.setItem(ARRAY_USERS, JSON.stringify(filter));
+//     location.reload() //перезавантажує сторніку з поточним url
+// }
+//
+// //6.1.
+// function editUser(id) {
+//     const parse = JSON.parse(localStorage.getItem(ARRAY_USERS));
+//     const user = parse.find(user => user.id === id);
+//     for (let i = 0; i < form1.children.length; i++) {
+//         const form1Element = form1.children[i];
+//         if (form1Element.name && form1Element.type !== "submit") {
+//             for (const key in user) {
+//                 if (form1Element.name === key) {
+//                     form1Element.value = user[key];
+//                 }
+//             }
+//         }
+//     }
+//     tempUser = user;
+// }
 
-//1.1.
-form1.submit1.onclick = ev => {
-    // ev.preventDefault(); відміняє дію браузера
-    let person = {...tempUser};
-    tempUser = {};
-    for (let i = 0; i < form1.children.length; i++) {
-        const form1Element = form1.children[i];
-        if (form1Element.name && form1Element.type !== "submit") {
-            person[form1Element.name] = form1Element.value;
-        }
-    }
-    if (!person.id) {
-        person.id = new Date().getTime();
-    }
-    console.log("person");
-    console.log(person);
-    saveUser(person);
-}
-getDataFromLSt()
+// Н О В І   Т А С К И     (js_demos/js/preview/lesson11/)
 
-//2.1.
-function saveUser(user) {
-    if (localStorage.hasOwnProperty(ARRAY_USERS)) {
-        const arrayUsers = JSON.parse(localStorage.getItem(ARRAY_USERS));
-        const find = arrayUsers.find(value => value.id === user.id);
-        if (find) {
-            const filter = arrayUsers.filter(value => value.id !== user.id);
-            filter.push(user);
-            localStorage.setItem(ARRAY_USERS, JSON.stringify(filter));
-        } else {
-            arrayUsers.push(user)
-            localStorage.setItem(ARRAY_USERS, JSON.stringify(arrayUsers));
-        }
-    } else {
-        localStorage.setItem(ARRAY_USERS, JSON.stringify([user]))
-    }
-}
+// є масив -
+// створити під кожен об'єкт свій блок з конопкою "додати до улюблених" при натисканні на яку об'єкт потрапляє до масиву favorites улюблених обраних об'єктів в локальному сховищі.
+// Створити сторніку favorites.html при переході на яку потрібно вивест в документ всіх обраних на попередньому етапі.
 
-//3.1.
-function getDataFromLSt() {
-    if (localStorage.hasOwnProperty(ARRAY_USERS)) {
-        const arrUser = JSON.parse(localStorage.getItem(ARRAY_USERS))
-        for (const user of arrUser) {
-            content.appendChild(createDivPerson(user));
-        }
-    }
-}
+// T A S K 1
+// let users = [
+//     {name: 'vasya', age: 31, status: false},
+//     {name: 'petya', age: 30, status: true},
+//     {name: 'kolya', age: 29, status: true},
+//     {name: 'olya', age: 28, status: false},
+//     {name: 'max', age: 30, status: true},
+//     {name: 'anya', age: 31, status: false},
+//     {name: 'oleg', age: 28, status: false},
+//     {name: 'andrey', age: 29, status: true},
+//     {name: 'masha', age: 30, status: true},
+//     {name: 'olya', age: 31, status: false},
+//     {name: 'max', age: 31, status: true}
+// ];
+//
+// for (const user of users) {
+//     let div = document.createElement("div");
+//     div.innerText = `${user.name} - - ${user.age} - - ${user["status"]}`
+//     document.body.appendChild(div);
+//
+//     let button = document.createElement("button");
+//     button.innerText = "Favorite"
+//     document.body.appendChild(button);
+//
+//     button.onclick = function (ev){
+//         // опять же, ми достаєм наш масивчик з локалСторейджу, і парсим його, щоб робити маніпуляції з ним в самому JSi
+//         // додаєм до нього юзера на якого нажали кнопку, сетаєм, не забуваєм стрінгіфаяти назад.
+//         let favorites = JSON.parse(localStorage.getItem("favoritesArr")) || [];
+//         favorites.push(user);
+//         localStorage.setItem("favoritesArr", JSON.stringify(favorites));
+//
+//     }
+// }
 
-//4.1
-function createDivPerson(user) {
-    const main = document.createElement("div");
-    let flag = true;
-    for (const key in user) {
-        if (flag) {
-            const h3 = document.createElement("h3");
-            h3.innerText = key + " : " + user[key];
-            main.appendChild(h3);
-            flag = false;
-        } else {
-            const p = document.createElement("p");
-            p.innerText = key + " : " + user[key];
-            main.appendChild(p);
-        }
-    }
-    main.style = "width: 300px; border:red 1px solid; float: left";
-    const b1 = document.createElement("button");
-    const b2 = document.createElement("button");
-    b1.innerText = "Edit";
-    b2.innerText = "Delete";
+// T A S K 2
+// -створити форму з інпутами для name та age.
+//     При відправці форми записати об'єкт в localstorage
 
-    b1.onclick = function () {
-        editUser(user.id);
-    }
+// let form3 = document.getElementById("form3");
+// form3.onsubmit = function (ev) {
+//     ev.preventDefault()
+//     let name = this.name.value;
+//     let age = this.age.value;
+//     console.log(name, age);
+//     localStorage.setItem("USER", JSON.stringify({name:name, age:age}));
+//     //якщо ключ і велью одинакові можна писати шось одне, {name, age}
+// }
 
-    b2.onclick = function () {
-        deleteUser(user.id);
-    }
+// T A S K 3
+// -створити форму з інпутами для model,type та volume автівки.
+//     при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.
 
-    main.appendChild(b1);
-    main.appendChild(b2);
+// let form = document.forms.form;
+// form.onsubmit = function (ev) {
+//     ev.preventDefault()
+//     let model = this.model.value;
+//     let type = this.type.value;
+//     let volume = this.volume.value;
+//     let car = {model, type, volume};
+//     let cars = JSON.parse(localStorage.getItem("cars"));
+//     if (!cars) {
+//         cars = [];
+//         cars.push(car);
+//     } else {
+//         cars.push(car)
+//     }
+//     localStorage.setItem("cars", JSON.stringify(cars))
+// }
 
-    return main;
-}
-
-//5.1.
-function deleteUser(id) {
-    const parse = JSON.parse(localStorage.getItem(ARRAY_USERS));
-    const filter = parse.filter(user => user.id !== id);
-    localStorage.setItem(ARRAY_USERS, JSON.stringify(filter));
-    location.reload() //перезавантажує сторніку з поточним url
-}
-
-//6.1.
-function editUser(id) {
-    const parse = JSON.parse(localStorage.getItem(ARRAY_USERS));
-    const user = parse.find(user => user.id === id);
-    for (let i = 0; i < form1.children.length; i++) {
-        const form1Element = form1.children[i];
-        if (form1Element.name && form1Element.type !== "submit") {
-            for (const key in user) {
-                if (form1Element.name === key) {
-                    form1Element.value = user[key];
-                }
-            }
-        }
-    }
-    tempUser = user;
-}
 
 // T R Y
 // geolocation

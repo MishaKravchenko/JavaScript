@@ -27,11 +27,70 @@
 // Всі характеристики повинні мати свої блоки всередені div.post
 // https://jsonplaceholder.typicode.com/posts
 
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//     .then(value=>value.json())
+//     .then(response => {
+//         let generalDiv = document.createElement("div");
+//         for (const item of response) {
+//             let div = document.createElement("div");
+//             let h1 = document.createElement("h1");
+//             let h2 = document.createElement("h2");
+//             let p = document.createElement("p");
+
+//             generalDiv.style.display = "flex";
+//             generalDiv.style.flexFlow = "row wrap"
+//             div.style.margin = "20px 0"
+//             div.style.border = "10px solid green";
+//             div.style.width = "20%";
+//             div.style.backgroundColor = "orange";
+//             div.style.boxSizing = "border-box"
+
+//             h1.innerText = `${item.id}`;
+//             h2.innerText = `${item.title}`;
+//             p.innerText = `${item.body}`;
+//             document.body.appendChild(generalDiv);
+//             generalDiv.appendChild(div)
+//             div.append(h1,h2,p);
+//         }
+//     });
+
 // 3.
 // Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті.
 //     Для кожного елементу свій блок div.comment
 // Всі характеристики повинні мати свої блоки всередені div.comment
 // https://jsonplaceholder.typicode.com/comments
+
+// fetch("https://jsonplaceholder.typicode.com/comments")
+//     .then(value => value.json())
+//     .then(response =>{
+//         let generalDiv = document.createElement("div");
+//         for (const item of response) {
+//             let div = document.createElement("div");
+//             let h1 = document.createElement("h1");
+//             let h2 = document.createElement("h2");
+//             let pEmail = document.createElement("p");
+//             let pBody = document.createElement("p");
+//
+//             h1.innerText = `${item.id}`;
+//             h2.innerText = `${item.name}`;
+//             pEmail.innerText = `${item.email}`;
+//             pBody.innerText = `${item.body}`;
+//
+//             generalDiv.style.display = "flex";
+//             generalDiv.style.flexFlow = "row wrap"
+//             generalDiv.style.textAlign = "center"
+//             div.style.margin = "20px 0"
+//             div.style.border = "10px solid green";
+//             div.style.width = "20%";
+//             div.style.backgroundColor = "orange";
+//             div.style.boxSizing = "border-box"
+//
+//             document.body.appendChild(generalDiv);
+//             generalDiv.appendChild(div);
+//             div.append(h1,h2,pEmail,pBody );
+//
+//         }
+// })
 
 // 4.
 // Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті
@@ -39,4 +98,71 @@
 //     кожному елементу юзера створити кнопку, при клику на яку в окремий блок виводяться всі пости поточного юзера.
 //     Кожному елементу post створити кнопку, при клику на яку в окремий блок виводяться всі коментарі поточного поста
 
+// fetch("https://jsonplaceholder.typicode.com/users")
+//     .then(value => value.json())
+//     .then(response =>{
+//         let generalDiv = document.createElement("div");
+//         for (const item of response) {
+//             let div = document.createElement("div");
+//             let h1 = document.createElement("h1");
+//             let h2 = document.createElement("h2");
+//             let p = document.createElement("p");
+//             document.createElement("button")
+//
+//
+//             h1.innerText = `${item.id}`;
+//             h2.innerText = `${item.name} - - ${item.username}`;
+//             p.innerText = `${item.address.street} - ${item.address.suite} - ${item.address.city} - ${item.address.zipcode}`;
+//
+//             document.body.appendChild(generalDiv);
+//             generalDiv.appendChild(div);
+//             div.append(h1, h2, p);
+//         }
+//     });
 
+
+//О тримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті
+// https://jsonplaceholder.typicode.com/posts
+// зробити кнопку до кожного поста. при кліку на яку виводяться в окремий блок всі коментарі поточного поста
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(value => value.json())
+    .then(response => {
+        let generalDiv = document.createElement("div");
+        for (const item of response) {
+            let div = document.createElement("div");
+            let h1 = document.createElement("h1");
+            let h2 = document.createElement("h2");
+            let p = document.createElement("p");
+            let button = document.createElement("button");
+
+            generalDiv.style.display = "flex";
+            generalDiv.style.flexFlow = "row wrap"
+            div.style.margin = "20px 0"
+            div.style.border = "10px solid green";
+            div.style.width = "20%";
+            div.style.backgroundColor = "orange";
+            div.style.boxSizing = "border-box"
+
+            h1.innerText = `${item.id}`;
+            h2.innerText = `${item.title}`;
+            p.innerText = `${item.body}`;
+            button.innerText = "CHECK"
+
+            document.body.appendChild(generalDiv);
+            generalDiv.appendChild(div)
+            div.append(h1, h2, button);
+
+            let flag = true
+            button.onclick = function (ev) {
+                ev.preventDefault();
+                if (flag) {
+                    div.appendChild(p);
+                    flag = false;
+                } else {
+                    p.style.display = "none";
+                    flag = true;
+                }
+            }
+        }
+    });

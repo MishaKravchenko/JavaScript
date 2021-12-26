@@ -10,16 +10,13 @@
 //     До кожного товару додати кнопку, при кліку на яку з лс видаляється конкретний обраний  товар
 
 //////////////////////////////////////////////////////////////////////////////////////////
-//https://content.rozetka.com.ua/goods/images/original/230188039.jpg
-//https://content.rozetka.com.ua/goods/images/original/64933294.jpg
-//https://content1.rozetka.com.ua/goods/images/original/234510025.jpg
+//Delitsiya -----https://content.rozetka.com.ua/goods/images/original/64933294.jpg
+//Kinder --------https://content1.rozetka.com.ua/goods/images/original/234510025.jpg
+//MsM ---------- https://content2.rozetka.com.ua/goods/images/original/232102118.jpg
 //////////////////////////////////////////////////////////////////////////////////////////
 
 let ARRAY_PRODUCTS = "ARRAY_PRODUCTS";
 let tempProduct = {};
-let content = document.getElementById("content");
-content.style.display = "flex";
-content.style.flexFlow = "row wrap";
 const form1 = document.forms.form1;
 
 //1.1.
@@ -40,7 +37,6 @@ form1.submit1.onclick = ev => {
     console.log(product);
     saveProduct(product);
 }
-getDataFromLSt()
 
 //2.1.
 function saveProduct(candy) {
@@ -60,52 +56,8 @@ function saveProduct(candy) {
     }
 }
 
-//3.1.
-function getDataFromLSt() {
-    if (localStorage.hasOwnProperty(ARRAY_PRODUCTS)) {
-        const arrCandy = JSON.parse(localStorage.getItem(ARRAY_PRODUCTS))
-        for (const candy of arrCandy) {
-            content.appendChild(createDivCandy(candy));
-        }
-    }
-}
+let aList = document.createElement('a');
+aList.setAttribute('href', 'list.html');
+aList.innerText = 'Show all products';
 
-// 4.1
-function createDivCandy(candy) {
-    const main = document.createElement("div");
-    for (const key in candy) {
-        if (key === "name") {
-            const h1 = document.createElement("h1");
-            h1.innerText = candy[key];
-            main.appendChild(h1);
-        } else if (key === "img"){
-            const img = document.createElement("img");
-            img.src = candy[key];
-            main.appendChild(img);
-            img.style.width = "200px";
-        }else {
-            const p = document.createElement("p");
-            p.innerText = key + " : " + candy[key];
-            main.appendChild(p);
-        }
-    }
-    main.style = "width: 300px; border:red 1px solid; display:flex; flex-flow: column; align-items:center; justify-content: space-between;";
-
-    const b2 = document.createElement("button");
-    b2.innerText = "Delete";
-    main.appendChild(b2);
-
-    b2.onclick = function () {
-        deleteUser(candy.id);
-    }
-
-    return main;
-}
-
-//5.1
-function deleteUser(id) {
-    const parse = JSON.parse(localStorage.getItem(ARRAY_PRODUCTS));
-    const filter = parse.filter(candy => candy.id !== id);
-    localStorage.setItem(ARRAY_PRODUCTS, JSON.stringify(filter));
-    location.reload() //перезавантажує сторніку з поточним url
-}
+document.body.appendChild(aList);

@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+.generalDiv{
+    display: flex;
+    flex-flow: row wrap;
+}
+.userDiv{
+    display: flex;
+    align-items: center;
+    border: red 3px solid;
+    width: 50%;
+    background-color: orange;
+}
+.userName{
+    width: 60%;
+    text-align: center;
+
+}
+.userID{
+    width: 20%;
+    text-align: center;
+}
+
+.linkUserDetails{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+}

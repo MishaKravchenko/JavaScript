@@ -23,9 +23,6 @@
     display: flex;
     justify-content: center;
 }
-/*divPost.classList.add('divPost');*/
-/*button.classList.add("button");*/
-/*a.classList.add('a');*/
 
 .divAllPosts{
     display: flex;

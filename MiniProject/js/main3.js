@@ -1,5 +1,4 @@
 // На странице post-details.html:
-// 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
 let generalDiv = document.createElement("div");
 generalDiv.classList.add("generalDiv");
 
@@ -19,6 +18,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userID}/posts`)
             h2.classList.add("h2");
             p.classList.add("p");
 
+            // 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
             h2.innerText = `${post.id}. - (${post.userId}) - ${post.title}`;
             p.innerText = `${post.body}`;
 

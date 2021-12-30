@@ -1,11 +1,7 @@
 // /*В index.html*/
-// /*1 получить массив объектов user с endpoint`а https://jsonplaceholder.typicode.com/users*/
-// /*2 Вывести id,name всех user в index.html. Отдельный блок для каждого user.*/
-// /*3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html, которая имеет детальную информацию про объект на который кликнули*/
-//
 let generalDiv = document.createElement("div");
 generalDiv.classList.add("generalDiv");
-
+// /*1 получить массив объектов user с endpoint`а https://jsonplaceholder.typicode.com/users*/
 fetch(`https://jsonplaceholder.typicode.com/users`)
     .then(value => value.json())
     .then(value => {
@@ -20,8 +16,10 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
             h3.classList.add("userID");
             a.classList.add("linkUserDetails");
 
+            // /*2 Вывести id,name всех user в index.html. Отдельный блок для каждого user.*/
             h2.innerText = `${user.name}`;
             h3.innerText = `${user.id}`;
+            // /*3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html, которая имеет детальную информацию про объект на который кликнули*/
             a.innerText = "Детальніше";
             a.href = "user-details.html?id="+ user.id;
 
@@ -30,8 +28,6 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
             div.append(h2,h3,a);
             generalDiv.appendChild(div);
         })
-        // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
-
 
     })
 document.body.appendChild(generalDiv);

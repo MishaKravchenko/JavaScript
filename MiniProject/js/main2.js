@@ -1,5 +1,4 @@
 // На странице user-details.html:
-// 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
 let url = new URL(window.location.href);
 let userID = url.searchParams.get('id');
 
@@ -25,6 +24,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userID}`)
         divInfo.classList.add("divInfo");
         divCompany.classList.add("divCompany");
 
+        // 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
         h2.innerText = `${user.id}. ${user.name}, ${user.username}`;
         divEmail.innerText = ` 
            - - E M A I L - -

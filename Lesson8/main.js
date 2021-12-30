@@ -131,7 +131,8 @@
 //
 // //1.1.
 // form1.submit1.onclick = ev => {
-//     // ev.preventDefault(); відміняє дію браузера
+//     //відміняє дію браузера
+//     ev.preventDefault();
 //     let person = {...tempUser};
 //     tempUser = {};
 //     for (let i = 0; i < form1.children.length; i++) {
@@ -213,7 +214,7 @@
 //     return main;
 // }
 //
-// //5.1.
+// // //5.1.
 // function deleteUser(id) {
 //     const parse = JSON.parse(localStorage.getItem(ARRAY_USERS));
 //     const filter = parse.filter(user => user.id !== id);
@@ -245,38 +246,38 @@
 // Створити сторніку favorites.html при переході на яку потрібно вивест в документ всіх обраних на попередньому етапі.
 
 // T A S K 1
-// let users = [
-//     {name: 'vasya', age: 31, status: false},
-//     {name: 'petya', age: 30, status: true},
-//     {name: 'kolya', age: 29, status: true},
-//     {name: 'olya', age: 28, status: false},
-//     {name: 'max', age: 30, status: true},
-//     {name: 'anya', age: 31, status: false},
-//     {name: 'oleg', age: 28, status: false},
-//     {name: 'andrey', age: 29, status: true},
-//     {name: 'masha', age: 30, status: true},
-//     {name: 'olya', age: 31, status: false},
-//     {name: 'max', age: 31, status: true}
-// ];
-//
-// for (const user of users) {
-//     let div = document.createElement("div");
-//     div.innerText = `${user.name} - - ${user.age} - - ${user["status"]}`
-//     document.body.appendChild(div);
-//
-//     let button = document.createElement("button");
-//     button.innerText = "Favorite"
-//     document.body.appendChild(button);
-//
-//     button.onclick = function (ev){
-//         // опять же, ми достаєм наш масивчик з локалСторейджу, і парсим його, щоб робити маніпуляції з ним в самому JSi
-//         // додаєм до нього юзера на якого нажали кнопку, сетаєм, не забуваєм стрінгіфаяти назад.
-//         let favorites = JSON.parse(localStorage.getItem("favoritesArr")) || [];
-//         favorites.push(user);
-//         localStorage.setItem("favoritesArr", JSON.stringify(favorites));
-//
-//     }
-// }
+let users = [
+    {name: 'vasya', age: 31, status: false},
+    {name: 'petya', age: 30, status: true},
+    {name: 'kolya', age: 29, status: true},
+    {name: 'olya', age: 28, status: false},
+    {name: 'max', age: 30, status: true},
+    {name: 'anya', age: 31, status: false},
+    {name: 'oleg', age: 28, status: false},
+    {name: 'andrey', age: 29, status: true},
+    {name: 'masha', age: 30, status: true},
+    {name: 'olya', age: 31, status: false},
+    {name: 'max', age: 31, status: true}
+];
+
+for (const user of users) {
+    let div = document.createElement("div");
+    div.innerText = `${user.name} - - ${user.age} - - ${user["status"]}`
+    document.body.appendChild(div);
+
+    let button = document.createElement("button");
+    button.innerText = "Favorite"
+    document.body.appendChild(button);
+
+    button.onclick = function (ev){
+        // опять же, ми достаєм наш масивчик з локалСторейджу, і парсим його, щоб робити маніпуляції з ним в самому JSi
+        // додаєм до нього юзера на якого нажали кнопку, сетаєм, не забуваєм стрінгіфаяти назад.
+        let favorites = JSON.parse(localStorage.getItem("favoritesArr")) || [];
+        favorites.push(user);
+        localStorage.setItem("favoritesArr", JSON.stringify(favorites));
+
+    }
+}
 
 // T A S K 2
 // -створити форму з інпутами для name та age.

@@ -60,6 +60,9 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userID}`)
 //     6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
 //     которая имеет детальную информацию про текущий пост.
 
+        let divAllPosts = document.createElement("div");
+        divAllPosts.classList.add("divAllPosts")
+
         let button = document.createElement("button");
         button.innerText = `post of current user`;
         button.classList.add("button");
@@ -76,13 +79,12 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userID}`)
                             divPost.innerText = `
                         T I T L E: 
                         ${post.title}`;
-                            document.body.appendChild(divPost);
                             let a = document.createElement('a');
                             a.href = 'post-details.html?id=' + posts.id;
                             a.innerText = 'Детальніше';
                             a.classList.add('a');
                             button.disabled = true;
-                            document.body.appendChild(a);
+                            divAllPosts.append(divPost, a);
                         }
                     }
 
@@ -90,7 +92,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userID}`)
         }
         divUser.append(h2, divEmail, divAddress, divGeo, divInfo, divCompany);
         generalDiv.appendChild(divUser);
-        document.body.append(generalDiv, button);
+        document.body.append(generalDiv, button, divAllPosts);
     })
 
 

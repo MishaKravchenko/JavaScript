@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.generalDiv{
+    display: flex;
+    justify-content: center;
+    background-color: #ffe1bd;
+    padding: 20px 0;
+    margin: 0 100px;
+    border: black 10px solid;
+}
+
+.divUser{
+    background-color: #ff9448;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.h2, .divEmail, .divAddress, .divGeo, .divInfo, .divCompany{
+    border: black 1px solid;
+    display: flex;
+    justify-content: center;
+}
+/*divPost.classList.add('divPost');*/
+/*button.classList.add("button");*/
+/*a.classList.add('a');*/
+
+.divPost{
+ background-color: #ffca88;
+    margin: 0 100px;
+    border: black 1px solid;
+}
+
+.button{
+    padding: 12px;
+    margin: 20px 0;
+    background-color: crimson;
+    color: white;
+    border-radius: 7%;
+    border: black 3px solid;
+}
+
+.a{
+    text-decoration: none;
+    background-color: darkred;
+    color: white;
+    padding: 5px 10px;
+    margin: 25px 0;
+}

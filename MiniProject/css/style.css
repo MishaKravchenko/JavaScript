@@ -4,6 +4,7 @@
 .generalDiv{
     display: flex;
     flex-flow: row wrap;
+    margin: 40px 100px;
 }
 .userDiv{
     display: flex;
@@ -11,6 +12,7 @@
     border: red 3px solid;
     width: 50%;
     background-color: orange;
+
 }
 .userName{
     width: 60%;

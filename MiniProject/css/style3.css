@@ -1,0 +1,42 @@
+/*generalDiv.classList.add("generalDiv");*/
+/*divPost.classList.add("divPost");*/
+/*h2.classList.add("h2");*/
+/*p.classList.add("p");*/
+/*divComment.classList.add("divComment");*/
+/*h2.classList.add("h2");*/
+/*p.classList.add("p");*/
+
+*{
+    box-sizing: border-box;
+}
+.generalDiv{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 100px;
+
+}
+.divPost,.divComment{
+    display: flex;
+    flex-flow: column ;
+    background-color: #ffc055;
+    padding: 25px;
+    border: black 2px solid;
+    width: 20%;
+}
+.divComment{
+    background-color: #9a5f00;
+}
+
+.h2{
+    background-color: #ff9e00;
+}
+
+.divComment>h2{
+    background-color: #600000;
+    color: white;
+}
+
+.divComment>p{
+    color: white;
+}
+

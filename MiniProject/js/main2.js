@@ -1,11 +1,5 @@
 // На странице user-details.html:
 // 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
-// 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
-// (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
-//     6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
-//     которая имеет детальную информацию про текущий пост.
-
-
 let url = new URL(window.location.href);
 let userID = url.searchParams.get('id');
 
@@ -55,11 +49,8 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userID}`)
            catchPhrase: ${user.company.catchPhrase},
            bs: ${user.company.bs}`;
 
-        // 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
+// 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
 // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
-//     6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
-//     которая имеет детальную информацию про текущий пост.
-
         let divAllPosts = document.createElement("div");
         divAllPosts.classList.add("divAllPosts")
 
@@ -79,8 +70,11 @@ fetch(`https://jsonplaceholder.typicode.com/users/${userID}`)
                             divPost.innerText = `
                         T I T L E: 
                         ${post.title}`;
+
+//     6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
+//     которая имеет детальную информацию про текущий пост.
                             let a = document.createElement('a');
-                            a.href = 'post-details.html?id=' + posts.id;
+                            a.href = 'post-details.html?id=' + post.userId;
                             a.innerText = 'Детальніше';
                             a.classList.add('a');
                             button.disabled = true;

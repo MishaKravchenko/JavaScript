@@ -30,6 +30,8 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
             div.append(h2,h3,a);
             generalDiv.appendChild(div);
         })
-        console.log(value);
+        // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
+
+
     })
 document.body.appendChild(generalDiv);
